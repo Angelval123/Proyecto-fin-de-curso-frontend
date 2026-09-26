@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ofertas | E-Store</title>
+  <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="index.html">
+        <img src="assets/logo.jpg" alt="Logo de E-Store">
+        <span>E-Store</span>
+      </a>
+
+      <nav class="menu">
+        <a href="index.html">Inicio</a>
+        <a href="productos.html">Productos</a>
+        <a class="is-active" href="ofertas.html">Ofertas</a>
+        <a href="nosotros.html">Nosotros</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a class="icon-button" href="productos.html#buscador" aria-label="Buscar productos">⌕</a>
+        <a class="btn btn-primary cart-button" href="carrito.html">Carrito <span>0</span></a>
+      </div>
+    </div>
+  </header>
+
+  <main class="page-content">
+    <section class="container">
+      <p class="eyebrow">Promociones especiales</p>
+      <h1>Ofertas de E-Store</h1>
+
+      <section class="promo">
+        <div class="promo__content">
+          <h2>Hasta 40% de descuento</h2>
+          <p>Encuentra productos tecnológicos a precios increíbles.</p>
+          <a class="btn btn-primary" href="productos.html">Ver productos</a>
+        </div>
+      </section>
+
+      <div class="product-grid">
+        <article class="product-card">
+          <span class="badge badge-sale">-20%</span>
+          <img src="assets/product-2.svg" alt="Laptop en oferta">
+          <div class="product-card__content">
+            <h3>Laptop profesional</h3>
+            <p class="old-price">S/ 3,099</p>
+            <div class="product-meta">
+              <strong>S/ 2,499</strong>
+              <button class="btn btn-primary">Comprar</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <span class="badge badge-sale">-15%</span>
+          <img src="assets/product-3.svg" alt="Monitor en oferta">
+          <div class="product-card__content">
+            <h3>Monitor LED 24 pulgadas</h3>
+            <p class="old-price">S/ 699</p>
+            <div class="product-meta">
+              <strong>S/ 599</strong>
+              <button class="btn btn-primary">Comprar</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <span class="badge badge-sale">-25%</span>
+          <img src="assets/product-1.svg" alt="Cámara web en oferta">
+          <div class="product-card__content">
+            <h3>Cámara web Full HD</h3>
+            <p class="old-price">S/ 199</p>
+            <div class="product-meta">
+              <strong>S/ 149</strong>
+              <button class="btn btn-primary">Comprar</button>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2026 E-Store. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+  <script src="scripts/whatsapp.js"></script>
+</body>
+</html>

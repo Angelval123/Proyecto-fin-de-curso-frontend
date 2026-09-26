@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detalle del producto | E-Store</title>
+  <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="index.html">
+        <img src="assets/logo.jpg" alt="Logo de E-Store">
+        <span>E-Store</span>
+      </a>
+      <nav class="menu">
+        <a href="index.html">Inicio</a>
+        <a class="is-active" href="productos.html">Productos</a>
+        <a href="ofertas.html">Ofertas</a>
+        <a href="nosotros.html">Nosotros</a>
+      </nav>
+      <div class="nav-actions">
+        <a class="btn btn-primary cart-button" href="carrito.html">Carrito <span>0</span></a>
+      </div>
+    </div>
+  </header>
+
+  <main class="page-content">
+    <section class="container product-detail" id="product-detail">
+      <a class="back-link product-detail__back" href="productos.html">← Volver al catálogo</a>
+      <div class="product-detail__grid">
+        <div class="product-detail__visual">
+          <img id="detail-image" src="assets/product-3.svg" alt="">
+        </div>
+        <div class="product-detail__content">
+          <p class="eyebrow" id="detail-category">Producto</p>
+          <h1 id="detail-name">Cargando producto...</h1>
+          <p class="product-detail__brand" id="detail-brand"></p>
+          <p class="product-detail__description" id="detail-description"></p>
+          <strong class="product-detail__price" id="detail-price"></strong>
+          <div class="product-detail__discount" id="detail-discount"></div>
+          <a class="btn btn-primary" id="detail-buy" href="productos.html">Comprar este producto</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="container discount-detail" aria-labelledby="discount-detail-title">
+      <p class="eyebrow">Compra por volumen</p>
+      <h2 id="discount-detail-title">Descuentos disponibles para tu compra</h2>
+      <p>Desde 21 unidades, el descuento se aplica automáticamente en el carrito.</p>
+      <div class="discount-detail__rates">
+        <span>Periféricos <strong>10%</strong></span>
+        <span>Procesadores <strong>9%</strong></span>
+        <span>Scooters <strong>8%</strong></span>
+        <span>Laptops <strong>7%</strong></span>
+        <span>Componentes <strong>6%</strong></span>
+      </div>
+    </section>
+
+    <section class="container related-products" aria-labelledby="related-title">
+      <div class="section-heading">
+        <p class="eyebrow">También puede interesarte</p>
+        <h2 id="related-title">Productos relacionados</h2>
+      </div>
+      <div class="product-grid" id="related-grid"></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container"><p>© 2026 E-Store. Todos los derechos reservados.</p></div>
+  </footer>
+  <script src="scripts/producto.js"></script>
+  <script src="scripts/whatsapp.js"></script>
+</body>
+</html>

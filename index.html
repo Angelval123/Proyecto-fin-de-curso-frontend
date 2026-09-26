@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>E-Store | Tecnología</title>
+  <link rel="stylesheet" href="styles/styles.css">
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="index.html">
+        <img src="assets/logo.jpg" alt="Logo de E-Store">
+        <span>E-Store</span>
+      </a>
+
+      <nav class="menu">
+        <a class="is-active" href="index.html">Inicio</a>
+        <a href="productos.html">Productos</a>
+        <a href="ofertas.html">Ofertas</a>
+        <a href="nosotros.html">Nosotros</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a class="icon-button" href="productos.html#buscador" aria-label="Buscar productos">⌕</a>
+        <a class="btn btn-primary cart-button" href="carrito.html">Carrito <span>0</span></a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="container hero__grid">
+        <div class="hero__content">
+          <p class="eyebrow">Tecnología que sí quieres usar</p>
+          <h1>Tu próximo <em>upgrade</em> empieza aquí.</h1>
+          <p class="lead">
+            Equipa tu espacio con productos seleccionados, precios honestos y despacho rápido en todo el Perú.
+          </p>
+
+          <div class="hero__actions">
+            <a class="btn btn-primary" href="#productos">Ver productos</a>
+            <a class="btn btn-secondary" href="#ofertas">Ver ofertas</a>
+          </div>
+          <ul class="hero__stats" aria-label="Beneficios de E-Store">
+            <li><strong>+2,000</strong><span>clientes felices</span></li>
+            <li><strong>24 h</strong><span>despacho en Lima</span></li>
+            <li><strong>12 cuotas</strong><span>sin intereses</span></li>
+          </ul>
+        </div>
+
+        <div class="hero__visual">
+          <span class="hero__label">Selección de la semana</span>
+          <img src="assets/principal.jpg" alt="Productos tecnológicos">
+          <div class="hero__caption"><strong>Todo para tu setup</strong><span>Desde S/ 149</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="volume-discounts container" aria-labelledby="volume-discounts-title">
+      <div class="volume-discounts__intro">
+        <p class="eyebrow">Compra por volumen</p>
+        <h2 id="volume-discounts-title">Más unidades, mejor precio.</h2>
+        <p>Desde 21 unidades, recibe descuentos automáticos en tu carrito. Los periféricos pueden obtener hasta 10%.</p>
+      </div>
+      <div class="volume-discounts__rates" aria-label="Descuentos disponibles">
+        <div><strong>10%</strong><span>Periféricos</span></div>
+        <div><strong>9%</strong><span>Procesadores</span></div>
+        <div><strong>8%</strong><span>Scooters</span></div>
+        <div><strong>7%</strong><span>Laptops</span></div>
+        <div><strong>6%</strong><span>Componentes</span></div>
+      </div>
+      <a class="btn btn-primary" href="productos.html">Ver productos</a>
+    </section>
+
+    <section class="categories container">
+      <div class="section-heading">
+        <p class="eyebrow">Explora nuestra tienda</p>
+        <h2>Categorías de productos</h2>
+      </div>
+
+      <div class="category-bar">
+  <a href="productos.html">Cámaras web</a>
+  <a href="productos.html">Videovigilancia</a>
+  <a href="productos.html">Computadoras</a>
+  <a href="productos.html">Laptops</a>
+  <a href="productos.html">Monitores</a>
+  <a href="productos.html">Memorias RAM</a>
+  <a href="productos.html">Placas madre</a>
+  <a href="productos.html">CPU</a>
+  <a href="productos.html">Tarjetas de video</a>
+  <a href="productos.html">Scooters eléctricos</a>
+  <a href="productos.html">Otros</a>
+  </div>
+    </section>
+
+    <section class="products container" id="productos">
+      <div class="section-heading">
+        <p class="eyebrow">Nuestro catálogo</p>
+        <h2>Productos destacados</h2>
+      </div>
+
+      <div class="product-grid">
+        <article class="product-card">
+          <span class="badge">Nuevo</span>
+          <img src="assets/product-1.svg" alt="Cámara web">
+          <div class="product-card__content">
+            <h3>Cámara web Full HD</h3>
+            <p>Ideal para clases, reuniones y streaming.</p>
+            <div class="product-meta">
+              <strong>S/ 149</strong>
+              <span>★★★★★</span>
+            </div>
+            <button class="btn btn-primary product-button">Añadir al carrito</button>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <span class="badge badge-sale">Oferta</span>
+          <img src="assets/product-2.svg" alt="Laptop">
+          <div class="product-card__content">
+            <h3>Laptop profesional</h3>
+            <p>Rendimiento para trabajo, estudio y entretenimiento.</p>
+            <div class="product-meta">
+              <strong>S/ 2,499</strong>
+              <span>★★★★★</span>
+            </div>
+            <button class="btn btn-primary product-button">Añadir al carrito</button>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <span class="badge">Top</span>
+          <img src="assets/product-3.svg" alt="Monitor">
+          <div class="product-card__content">
+            <h3>Monitor LED 24 pulgadas</h3>
+            <p>Imagen nítida y colores brillantes.</p>
+            <div class="product-meta">
+              <strong>S/ 599</strong>
+              <span>★★★★★</span>
+            </div>
+            <button class="btn btn-primary product-button">Añadir al carrito</button>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <span class="badge">Nuevo</span>
+          <img src="assets/product-1.svg" alt="Memoria RAM">
+          <div class="product-card__content">
+            <h3>Memoria RAM 16 GB</h3>
+            <p>Mejora la velocidad y el rendimiento de tu equipo.</p>
+            <div class="product-meta">
+              <strong>S/ 229</strong>
+              <span>★★★★★</span>
+            </div>
+            <button class="btn btn-primary product-button">Añadir al carrito</button>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <span class="badge badge-sale">Oferta</span>
+          <img src="assets/product-2.svg" alt="Tarjeta de video">
+          <div class="product-card__content">
+            <h3>Tarjeta de video RTX</h3>
+            <p>Potencia para videojuegos, edición y diseño.</p>
+            <div class="product-meta">
+              <strong>S/ 1,899</strong>
+              <span>★★★★★</span>
+            </div>
+            <button class="btn btn-primary product-button">Añadir al carrito</button>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <span class="badge">Nuevo</span>
+          <img src="assets/product-3.svg" alt="Scooter eléctrico">
+          <div class="product-card__content">
+            <h3>Scooter eléctrico</h3>
+            <p>Movilidad moderna, cómoda y eficiente.</p>
+            <div class="product-meta">
+              <strong>S/ 1,299</strong>
+              <span>★★★★★</span>
+            </div>
+            <button class="btn btn-primary product-button">Añadir al carrito</button>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="promo container" id="ofertas">
+      <div class="promo__content">
+        <p class="eyebrow">Ofertas especiales</p>
+        <h2>Hasta 40% de descuento</h2>
+        <p>
+          Aprovecha nuestras promociones en tecnología, computación y movilidad eléctrica.
+        </p>
+        <a href="#productos" class="btn btn-primary">Comprar ahora</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" id="nosotros">
+    <div class="container footer-grid">
+      <div>
+        <div class="brand brand--footer">
+          <img src="assets/logo.jpg" alt="Logo de E-Store">
+          <span>E-Store</span>
+        </div>
+        <p>Tu tienda online de tecnología y productos innovadores.</p>
+      </div>
+
+      <div>
+        <h4>Enlaces</h4>
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="productos.html">Productos</a></li>
+          <li><a href="ofertas.html">Ofertas</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Contacto</h4>
+        <ul>
+          <li>hola@estore.pe</li>
+          <li>+51 987 654 321</li>
+          <li>Lima, Perú</li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+  <script src="scripts/whatsapp.js"></script>
+</body>
+</html>

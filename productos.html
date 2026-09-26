@@ -1,0 +1,1433 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Productos | E-Store</title>
+  <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="index.html">
+        <img src="assets/logo.jpg" alt="Logo de E-Store">
+        <span>E-Store</span>
+      </a>
+
+      <nav class="menu">
+        <a href="index.html">Inicio</a>
+        <a class="is-active" href="productos.html">Productos</a>
+        <a href="ofertas.html">Ofertas</a>
+        <a href="nosotros.html">Nosotros</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a class="icon-button" href="#buscador" aria-label="Buscar productos">⌕</a>
+        <a class="btn btn-primary cart-button" href="carrito.html">Carrito <span>0</span></a>
+      </div>
+    </div>
+  </header>
+
+  <main class="page-content">
+    <section class="container">
+      <p class="eyebrow">Catálogo E-Store</p>
+      <h1>Encuentra tu próximo equipo</h1>
+
+      <div class="catalog-toolbar" id="buscador">
+        <label class="search-box">
+          <span>⌕</span>
+          <input id="product-search" type="search" placeholder="Buscar por nombre o categoría" autocomplete="off">
+        </label>
+        <label class="select-box">
+          <span>Marca</span>
+          <select id="brand-filter">
+            <option value="all">Todas</option>
+          </select>
+        </label>
+        <label class="select-box">
+          <span>Tipo</span>
+          <select id="type-filter">
+            <option value="all">Todos</option>
+          </select>
+        </label>
+        <label class="select-box">
+          <span>Stock</span>
+          <select id="stock-filter">
+            <option value="all">Cualquier stock</option>
+            <option value="high">250 o más</option>
+            <option value="medium">151 a 249</option>
+            <option value="low">51 a 150</option>
+            <option value="very-low">50 o menos</option>
+          </select>
+        </label>
+        <label class="select-box">
+          <span>Ordenar</span>
+          <select id="product-sort">
+            <option value="featured">Destacados</option>
+            <option value="price-low">Precio: menor a mayor</option>
+            <option value="price-high">Precio: mayor a menor</option>
+            <option value="stock-high">Mayor stock</option>
+            <option value="stock-low">Menor stock</option>
+          </select>
+        </label>
+      </div>
+
+      <p class="catalog-status" id="catalog-status" aria-live="polite"></p>
+
+      <div class="category-bar">
+        <a href="#" data-filter="all">Todos</a>
+        <a href="#" data-filter="camaras">Cámaras</a>
+        <a href="#" data-filter="computacion">Computación</a>
+        <a href="#" data-filter="computadoras-escritorio">Computadoras de escritorio</a>
+        <a href="#" data-filter="perifericos">Periféricos</a>
+        <a href="#" data-filter="componentes">Componentes</a>
+        <a href="#" data-filter="placas-madre">Placas madre</a>
+        <a href="#" data-filter="procesadores">Procesadores</a>
+        <a href="#" data-filter="monitores">Monitores</a>
+        <a href="#" data-filter="tarjetas-video">Tarjetas de video</a>
+        <a href="#" data-filter="movilidad">Movilidad</a>
+      </div>
+
+      <div class="product-grid" id="catalog-grid">
+        <article class="product-card" data-name="Logitech C270" data-category="camaras" data-price="88.50" data-stock="10">
+          <img src="assets/product-1.svg" alt="Logitech C270">
+          <div class="product-card__content">
+            <h3>Logitech C270</h3>
+            <p>Cámara web Logitech con resolución 720p.</p>
+            <div class="product-meta">
+              <strong>S/ 88.50</strong>
+              <span class="stock stock-medium">10 disponibles</span>
+            </div>
+            <button class="btn btn-primary product-button">Comprar</button>
+          </div>
+        </article>
+
+        <article class="product-card" data-name="Logitech C920s Pro" data-category="camaras" data-price="283" data-stock="10">
+          <img src="assets/product-1.svg" alt="Logitech C920s Pro">
+          <div class="product-card__content">
+            <h3>Logitech C920s Pro</h3>
+            <p>Cámara web Logitech con resolución 1080p.</p>
+            <div class="product-meta">
+              <strong>S/ 283</strong>
+              <span class="stock stock-medium">10 disponibles</span>
+            </div>
+            <button class="btn btn-primary product-button">Comprar</button>
+          </div>
+        </article>
+
+        <article class="product-card" data-name="Logitech C922 Pro" data-category="camaras" data-price="283" data-stock="10">
+          <img src="assets/product-1.svg" alt="Logitech C922 Pro">
+          <div class="product-card__content">
+            <h3>Logitech C922 Pro</h3>
+            <p>Cámara web Logitech con resolución 1080p.</p>
+            <div class="product-meta">
+              <strong>S/ 283</strong>
+              <span class="stock stock-medium">10 disponibles</span>
+            </div>
+            <button class="btn btn-primary product-button">Comprar</button>
+          </div>
+        </article>
+
+        <article class="product-card" data-name="Logitech Brio 100" data-category="camaras" data-price="136" data-stock="10">
+          <img src="assets/product-1.svg" alt="Logitech Brio 100">
+          <div class="product-card__content">
+            <h3>Logitech Brio 100</h3>
+            <p>Cámara web Logitech con resolución 1080p.</p>
+            <div class="product-meta">
+              <strong>S/ 136</strong>
+              <span class="stock stock-medium">10 disponibles</span>
+            </div>
+            <button class="btn btn-primary product-button">Comprar</button>
+          </div>
+        </article>
+
+        <article class="product-card" data-name="Creative Live! Cam Sync V2" data-category="camaras" data-price="146.50" data-stock="10">
+          <img src="assets/product-1.svg" alt="Creative Live! Cam Sync V2">
+          <div class="product-card__content">
+            <h3>Creative Live! Cam Sync V2</h3>
+            <p>Cámara web Creative con resolución 1080p.</p>
+            <div class="product-meta">
+              <strong>S/ 146.50</strong>
+              <span class="stock stock-medium">10 disponibles</span>
+            </div>
+            <button class="btn btn-primary product-button">Comprar</button>
+          </div>
+        </article>
+
+        <article class="product-card" data-name="Creative Live! Cam Sync V3" data-category="camaras" data-price="197.50" data-stock="10">
+          <img src="assets/product-1.svg" alt="Creative Live! Cam Sync V3">
+          <div class="product-card__content">
+            <h3>Creative Live! Cam Sync V3</h3>
+            <p>Cámara web Creative con resolución 2K.</p>
+            <div class="product-meta">
+              <strong>S/ 197.50</strong>
+              <span class="stock stock-medium">10 disponibles</span>
+            </div>
+            <button class="btn btn-primary product-button">Comprar</button>
+          </div>
+        </article>
+
+        <article class="product-card" data-name="Genius FaceCam 1000X" data-category="camaras" data-price="68" data-stock="10">
+          <img src="assets/product-1.svg" alt="Genius FaceCam 1000X">
+          <div class="product-card__content">
+            <h3>Genius FaceCam 1000X</h3>
+            <p>Cámara web Genius con resolución 720p.</p>
+            <div class="product-meta">
+              <strong>S/ 68</strong>
+              <span class="stock stock-medium">10 disponibles</span>
+            </div>
+            <button class="btn btn-primary product-button">Comprar</button>
+          </div>
+        </article>
+
+        <article class="product-card" data-name="Klip Xtreme Laguham KWC-500" data-category="camaras" data-price="88.50" data-stock="10">
+          <img src="assets/product-1.svg" alt="Klip Xtreme Laguham KWC-500">
+          <div class="product-card__content">
+            <h3>Klip Xtreme Laguham KWC-500</h3>
+            <p>Cámara web Klip Xtreme con resolución 1080p.</p>
+            <div class="product-meta">
+              <strong>S/ 88.50</strong>
+              <span class="stock stock-medium">10 disponibles</span>
+            </div>
+            <button class="btn btn-primary product-button">Comprar</button>
+          </div>
+        </article>
+
+        <article class="product-card" data-name="Razer Kiyo V2" data-category="camaras" data-price="644" data-stock="10">
+          <img src="assets/product-1.svg" alt="Razer Kiyo V2">
+          <div class="product-card__content">
+            <h3>Razer Kiyo V2</h3>
+            <p>Cámara web Razer con resolución 4K.</p>
+            <div class="product-meta">
+              <strong>S/ 644</strong>
+              <span class="stock stock-medium">10 disponibles</span>
+            </div>
+            <button class="btn btn-primary product-button">Comprar</button>
+          </div>
+        </article>
+
+        <article class="product-card" data-name="Targus AVC045LP" data-category="camaras" data-price="337.50" data-stock="10">
+          <img src="assets/product-1.svg" alt="Targus AVC045LP">
+          <div class="product-card__content">
+            <h3>Targus AVC045LP</h3>
+            <p>Cámara web Targus con resolución 1080p.</p>
+            <div class="product-meta">
+              <strong>S/ 337.50</strong>
+              <span class="stock stock-medium">10 disponibles</span>
+            </div>
+            <button class="btn btn-primary product-button">Comprar</button>
+          </div>
+        </article>
+
+        <article class="product-card" data-name="ASUS Vivobook 15 X1504VA" data-category="computacion" data-price="2625.50" data-stock="10">
+          <img src="assets/product-2.svg" alt="ASUS Vivobook 15 X1504VA">
+          <div class="product-card__content">
+            <h3>ASUS Vivobook 15 X1504VA</h3>
+            <p>Core 5, 16 GB de RAM y almacenamiento de 512 GB.</p>
+            <div class="product-meta">
+              <strong>S/ 2,625.50</strong>
+              <span class="stock stock-medium">10 disponibles</span>
+            </div>
+            <button class="btn btn-primary product-button">Comprar</button>
+          </div>
+        </article>
+
+        <article class="product-card" data-name="ASUS ExpertBook B1503CVA" data-category="computacion" data-price="3406.50" data-stock="10">
+          <img src="assets/product-2.svg" alt="ASUS ExpertBook B1503CVA">
+          <div class="product-card__content">
+            <h3>ASUS ExpertBook B1503CVA</h3>
+            <p>Core 7, 16 GB de RAM y almacenamiento de 512 GB.</p>
+            <div class="product-meta">
+              <strong>S/ 3,406.50</strong>
+              <span class="stock stock-medium">10 disponibles</span>
+            </div>
+            <button class="btn btn-primary product-button">Comprar</button>
+          </div>
+        </article>
+
+        <article class="product-card" data-name="HP 15-fd0374la" data-category="computacion" data-price="3222" data-stock="10">
+          <img src="assets/product-2.svg" alt="HP 15-fd0374la">
+          <div class="product-card__content">
+            <h3>HP 15-fd0374la</h3>
+            <p>Core 7, 16 GB de RAM y almacenamiento de 512 GB.</p>
+            <div class="product-meta">
+              <strong>S/ 3,222</strong>
+              <span class="stock stock-medium">10 disponibles</span>
+            </div>
+            <button class="btn btn-primary product-button">Comprar</button>
+          </div>
+        </article>
+
+        <article class="product-card" data-name="Lenovo V15 G5 IRL" data-category="computacion" data-price="1943.50" data-stock="10">
+          <img src="assets/product-2.svg" alt="Lenovo V15 G5 IRL">
+          <div class="product-card__content">
+            <h3>Lenovo V15 G5 IRL</h3>
+            <p>Core i3, 8 GB de RAM y almacenamiento de 512 GB.</p>
+            <div class="product-meta">
+              <strong>S/ 1,943.50</strong>
+              <span class="stock stock-medium">10 disponibles</span>
+            </div>
+            <button class="btn btn-primary product-button">Comprar</button>
+          </div>
+        </article>
+
+        <article class="product-card" data-name="Lenovo LOQ 15IAX9" data-category="computacion" data-price="3017.50" data-stock="10">
+          <img src="assets/product-2.svg" alt="Lenovo LOQ 15IAX9">
+          <div class="product-card__content">
+            <h3>Lenovo LOQ 15IAX9</h3>
+            <p>Core i5, 8 GB de RAM y tarjeta gráfica RTX 3050.</p>
+            <div class="product-meta">
+              <strong>S/ 3,017.50</strong>
+              <span class="stock stock-medium">10 disponibles</span>
+            </div>
+            <button class="btn btn-primary product-button">Comprar</button>
+          </div>
+        </article>
+
+        <article class="product-card" data-name="Dell Pro 15" data-category="computacion" data-price="3614.50" data-stock="10">
+          <img src="assets/product-2.svg" alt="Dell Pro 15">
+          <div class="product-card__content">
+            <h3>Dell Pro 15</h3>
+            <p>Core i5, 16 GB de RAM y almacenamiento de 512 GB.</p>
+            <div class="product-meta">
+              <strong>S/ 3,614.50</strong>
+              <span class="stock stock-medium">10 disponibles</span>
+            </div>
+            <button class="btn btn-primary product-button">Comprar</button>
+          </div>
+        </article>
+
+        <article class="product-card" data-name="HP Victus Gaming 15 RTX 4050" data-category="computacion" data-price="3989.50" data-stock="10">
+          <img src="assets/product-2.svg" alt="HP Victus Gaming 15 con RTX 4050">
+          <div class="product-card__content">
+            <h3>HP Victus Gaming 15 (RTX 4050)</h3>
+            <p>Core i5 y tarjeta gráfica RTX 4050.</p>
+            <div class="product-meta">
+              <strong>S/ 3,989.50</strong>
+              <span class="stock stock-medium">10 disponibles</span>
+            </div>
+            <button class="btn btn-primary product-button">Comprar</button>
+          </div>
+        </article>
+
+        <article class="product-card" data-name="HP Victus Gaming 15 RTX 3050" data-category="computacion" data-price="3034.50" data-stock="10">
+          <img src="assets/product-2.svg" alt="HP Victus Gaming 15 con RTX 3050">
+          <div class="product-card__content">
+            <h3>HP Victus Gaming 15 (RTX 3050)</h3>
+            <p>Core i5 y tarjeta gráfica RTX 3050.</p>
+            <div class="product-meta">
+              <strong>S/ 3,034.50</strong>
+              <span class="stock stock-medium">10 disponibles</span>
+            </div>
+            <button class="btn btn-primary product-button">Comprar</button>
+          </div>
+        </article>
+
+        <article class="product-card" data-name="Lenovo Legion 5" data-category="computacion" data-price="5799" data-stock="10">
+          <img src="assets/product-2.svg" alt="Lenovo Legion 5">
+          <div class="product-card__content">
+            <h3>Lenovo Legion 5</h3>
+            <p>Core i7, 16 GB de RAM y tarjeta gráfica RTX 5050.</p>
+            <div class="product-meta">
+              <strong>~S/ 5,799</strong>
+              <span class="stock stock-medium">10 disponibles</span>
+            </div>
+            <button class="btn btn-primary product-button">Comprar</button>
+          </div>
+        </article>
+
+        <article class="product-card" data-name="MSI Gaming" data-category="computacion" data-price="6000" data-stock="10">
+          <img src="assets/product-2.svg" alt="MSI Gaming">
+          <div class="product-card__content">
+            <h3>MSI Gaming</h3>
+            <p>Core i7 y tarjeta gráfica RTX 5060.</p>
+            <div class="product-meta">
+              <strong>~S/ 6,000</strong>
+              <span class="stock stock-medium">10 disponibles</span>
+            </div>
+            <button class="btn btn-primary product-button">Comprar</button>
+          </div>
+        </article>
+
+        <article class="product-card" data-name="Monitor LED 24 pulgadas" data-category="computacion" data-price="599" data-stock="16">
+          <img src="assets/product-3.svg" alt="Monitor LED">
+          <div class="product-card__content">
+            <h3>Monitor LED 24 pulgadas</h3>
+            <p>Colores brillantes e imagen nítida.</p>
+            <div class="product-meta">
+              <strong>S/ 599</strong>
+              <span class="stock stock-medium">16 disponibles</span>
+            </div>
+            <button class="btn btn-primary product-button">Comprar</button>
+          </div>
+        </article>
+
+        <article class="product-card" data-name="Kingston Fury Beast DDR5 5600" data-category="componentes" data-price="869.50" data-stock="10">
+          <img src="assets/product-1.svg" alt="Kingston Fury Beast DDR5 5600">
+          <div class="product-card__content">
+            <h3>Kingston Fury Beast DDR5 5600</h3>
+            <p>Memoria RAM Kingston DDR5 con capacidad de 16 GB.</p>
+            <div class="product-meta">
+              <strong>S/ 869.50</strong>
+              <span class="stock stock-medium">10 disponibles</span>
+            </div>
+            <button class="btn btn-primary product-button">Comprar</button>
+          </div>
+        </article>
+
+        <article class="product-card" data-name="Kingston Fury Beast DDR5 5200" data-category="componentes" data-price="851.00" data-stock="10">
+          <img src="assets/product-1.svg" alt="Kingston Fury Beast DDR5 5200">
+          <div class="product-card__content">
+            <h3>Kingston Fury Beast DDR5 5200</h3>
+            <p>Memoria RAM Kingston DDR5 con capacidad de 16 GB.</p>
+            <div class="product-meta">
+              <strong>S/ 851.00</strong>
+              <span class="stock stock-medium">10 disponibles</span>
+            </div>
+            <button class="btn btn-primary product-button">Comprar</button>
+          </div>
+        </article>
+
+        <article class="product-card" data-name="Crucial DDR5 4800 UDIMM" data-category="componentes" data-price="703" data-stock="10">
+          <img src="assets/product-1.svg" alt="Crucial DDR5 4800 UDIMM">
+          <div class="product-card__content">
+            <h3>Crucial DDR5 4800 UDIMM</h3>
+            <p>Memoria RAM Crucial DDR5 con capacidad de 16 GB.</p>
+            <div class="product-meta">
+              <strong>S/ 703</strong>
+              <span class="stock stock-medium">10 disponibles</span>
+            </div>
+            <button class="btn btn-primary product-button">Comprar</button>
+          </div>
+        </article>
+
+        <article class="product-card" data-name="TeamGroup T-Force Vulcan DDR5 6000" data-category="componentes" data-price="869.50" data-stock="10">
+          <img src="assets/product-1.svg" alt="TeamGroup T-Force Vulcan DDR5 6000">
+          <div class="product-card__content">
+            <h3>TeamGroup T-Force Vulcan DDR5 6000</h3>
+            <p>Memoria RAM TeamGroup DDR5 con capacidad de 16 GB.</p>
+            <div class="product-meta">
+              <strong>S/ 869.50</strong>
+              <span class="stock stock-medium">10 disponibles</span>
+            </div>
+            <button class="btn btn-primary product-button">Comprar</button>
+          </div>
+        </article>
+
+        <article class="product-card" data-name="TeamGroup Delta RGB DDR5 5600" data-category="componentes" data-price="888" data-stock="10">
+          <img src="assets/product-1.svg" alt="TeamGroup Delta RGB DDR5 5600">
+          <div class="product-card__content">
+            <h3>TeamGroup Delta RGB DDR5 5600</h3>
+            <p>Memoria RAM TeamGroup DDR5 con capacidad de 16 GB.</p>
+            <div class="product-meta">
+              <strong>S/ 888</strong>
+              <span class="stock stock-medium">10 disponibles</span>
+            </div>
+            <button class="btn btn-primary product-button">Comprar</button>
+          </div>
+        </article>
+
+        <article class="product-card" data-name="XPG Lancer Blade DDR5 6000" data-category="componentes" data-price="906.50" data-stock="10">
+          <img src="assets/product-1.svg" alt="XPG Lancer Blade DDR5 6000">
+          <div class="product-card__content">
+            <h3>XPG Lancer Blade DDR5 6000</h3>
+            <p>Memoria RAM XPG DDR5 con capacidad de 16 GB.</p>
+            <div class="product-meta">
+              <strong>S/ 906.50</strong>
+              <span class="stock stock-medium">10 disponibles</span>
+            </div>
+            <button class="btn btn-primary product-button">Comprar</button>
+          </div>
+        </article>
+
+        <article class="product-card" data-name="XPG Lancer Blade DDR5 6000 White" data-category="componentes" data-price="943.50" data-stock="10">
+          <img src="assets/product-1.svg" alt="XPG Lancer Blade DDR5 6000 White">
+          <div class="product-card__content">
+            <h3>XPG Lancer Blade DDR5 6000 White</h3>
+            <p>Memoria RAM XPG DDR5 blanca con capacidad de 16 GB.</p>
+            <div class="product-meta">
+              <strong>S/ 943.50</strong>
+              <span class="stock stock-medium">10 disponibles</span>
+            </div>
+            <button class="btn btn-primary product-button">Comprar</button>
+          </div>
+        </article>
+
+        <article class="product-card" data-name="Teros Titan DDR5 5600" data-category="componentes" data-price="795.50" data-stock="10">
+          <img src="assets/product-1.svg" alt="Teros Titan DDR5 5600">
+          <div class="product-card__content">
+            <h3>Teros Titan DDR5 5600</h3>
+            <p>Memoria RAM Teros DDR5 con capacidad de 16 GB.</p>
+            <div class="product-meta">
+              <strong>S/ 795.50</strong>
+              <span class="stock stock-medium">10 disponibles</span>
+            </div>
+            <button class="btn btn-primary product-button">Comprar</button>
+          </div>
+        </article>
+
+        <article class="product-card" data-name="Hiksemi Armor DDR5 5600" data-category="componentes" data-price="795.50" data-stock="10">
+          <img src="assets/product-1.svg" alt="Hiksemi Armor DDR5 5600">
+          <div class="product-card__content">
+            <h3>Hiksemi Armor DDR5 5600</h3>
+            <p>Memoria RAM Hiksemi DDR5 con capacidad de 16 GB.</p>
+            <div class="product-meta">
+              <strong>S/ 795.50</strong>
+              <span class="stock stock-medium">10 disponibles</span>
+            </div>
+            <button class="btn btn-primary product-button">Comprar</button>
+          </div>
+        </article>
+
+        <article class="product-card" data-name="Patriot Viper Venom DDR5 6000" data-category="componentes" data-price="839" data-stock="10">
+          <img src="assets/product-1.svg" alt="Patriot Viper Venom DDR5 6000">
+          <div class="product-card__content">
+            <h3>Patriot Viper Venom DDR5 6000</h3>
+            <p>Memoria RAM Patriot DDR5 con capacidad de 16 GB.</p>
+            <div class="product-meta">
+              <strong>~S/ 839</strong>
+              <span class="stock stock-medium">10 disponibles</span>
+            </div>
+            <button class="btn btn-primary product-button">Comprar</button>
+          </div>
+        </article>
+
+        <article class="product-card" data-name="ASUS ProArt RTX 5080" data-category="tarjetas-video" data-price="8060" data-stock="10">
+          <img src="assets/product-3.svg" alt="ASUS ProArt RTX 5080">
+          <div class="product-card__content">
+            <h3>ASUS ProArt RTX 5080</h3>
+            <p>Tarjeta de video profesional con 16 GB de VRAM.</p>
+            <div class="product-meta">
+              <strong>S/ 8,060</strong>
+              <span class="stock stock-medium">10 disponibles</span>
+            </div>
+            <button class="btn btn-primary product-button">Comprar</button>
+          </div>
+        </article>
+
+        <article class="product-card" data-name="Gigabyte RX 9070 XT AORUS Elite" data-category="tarjetas-video" data-price="3945" data-stock="10">
+          <img src="assets/product-3.svg" alt="Gigabyte RX 9070 XT AORUS Elite">
+          <div class="product-card__content">
+            <h3>Gigabyte RX 9070 XT AORUS Elite</h3>
+            <p>Alto rendimiento para gaming con 16 GB de VRAM.</p>
+            <div class="product-meta">
+              <strong>S/ 3,945</strong>
+              <span class="stock stock-medium">10 disponibles</span>
+            </div>
+            <button class="btn btn-primary product-button">Comprar</button>
+          </div>
+        </article>
+
+        <article class="product-card" data-name="ASUS RX 9070 XT Prime" data-category="tarjetas-video" data-price="3499" data-stock="10">
+          <img src="assets/product-3.svg" alt="ASUS RX 9070 XT Prime">
+          <div class="product-card__content">
+            <h3>ASUS RX 9070 XT Prime</h3>
+            <p>Potencia gráfica con 16 GB de VRAM.</p>
+            <div class="product-meta">
+              <strong>S/ 3,499</strong>
+              <span class="stock stock-medium">10 disponibles</span>
+            </div>
+            <button class="btn btn-primary product-button">Comprar</button>
+          </div>
+        </article>
+
+        <article class="product-card" data-name="Gigabyte RX 9070 Gaming OC" data-category="tarjetas-video" data-price="3480" data-stock="10">
+          <img src="assets/product-3.svg" alt="Gigabyte RX 9070 Gaming OC">
+          <div class="product-card__content">
+            <h3>Gigabyte RX 9070 Gaming OC</h3>
+            <p>Rendimiento estable para juegos con 16 GB de VRAM.</p>
+            <div class="product-meta">
+              <strong>S/ 3,480</strong>
+              <span class="stock stock-medium">10 disponibles</span>
+            </div>
+            <button class="btn btn-primary product-button">Comprar</button>
+          </div>
+        </article>
+
+        <article class="product-card" data-name="Gigabyte RTX 5070 Gaming OC" data-category="tarjetas-video" data-price="3423" data-stock="10">
+          <img src="assets/product-3.svg" alt="Gigabyte RTX 5070 Gaming OC">
+          <div class="product-card__content">
+            <h3>Gigabyte RTX 5070 Gaming OC</h3>
+            <p>Gráficos fluidos para gaming con 12 GB de VRAM.</p>
+            <div class="product-meta">
+              <strong>S/ 3,423</strong>
+              <span class="stock stock-medium">10 disponibles</span>
+            </div>
+            <button class="btn btn-primary product-button">Comprar</button>
+          </div>
+        </article>
+
+        <article class="product-card" data-name="ASRock RX 9070 XT Challenger" data-category="tarjetas-video" data-price="3322" data-stock="10">
+          <img src="assets/product-3.svg" alt="ASRock RX 9070 XT Challenger">
+          <div class="product-card__content">
+            <h3>ASRock RX 9070 XT Challenger</h3>
+            <p>Rendimiento competitivo con 16 GB de VRAM.</p>
+            <div class="product-meta">
+              <strong>S/ 3,322</strong>
+              <span class="stock stock-medium">10 disponibles</span>
+            </div>
+            <button class="btn btn-primary product-button">Comprar</button>
+          </div>
+        </article>
+
+        <article class="product-card" data-name="ASUS RTX 5060 Ti TUF/Prime" data-category="tarjetas-video" data-price="2396" data-stock="10">
+          <img src="assets/product-3.svg" alt="ASUS RTX 5060 Ti TUF o Prime">
+          <div class="product-card__content">
+            <h3>ASUS RTX 5060 Ti TUF/Prime</h3>
+            <p>Tarjeta compacta para gaming con 8 GB de VRAM.</p>
+            <div class="product-meta">
+              <strong>S/ 2,396</strong>
+              <span class="stock stock-medium">10 disponibles</span>
+            </div>
+            <button class="btn btn-primary product-button">Comprar</button>
+          </div>
+        </article>
+
+        <article class="product-card" data-name="XFX RX 9060 XT Mercury" data-category="tarjetas-video" data-price="2173" data-stock="10">
+          <img src="assets/product-3.svg" alt="XFX RX 9060 XT Mercury">
+          <div class="product-card__content">
+            <h3>XFX RX 9060 XT Mercury</h3>
+            <p>Experiencia gráfica de alta calidad con 16 GB de VRAM.</p>
+            <div class="product-meta">
+              <strong>S/ 2,173</strong>
+              <span class="stock stock-medium">10 disponibles</span>
+            </div>
+            <button class="btn btn-primary product-button">Comprar</button>
+          </div>
+        </article>
+
+        <article class="product-card" data-name="PNY RTX 5060 Ti Triple Fan" data-category="tarjetas-video" data-price="2112" data-stock="10">
+          <img src="assets/product-3.svg" alt="PNY RTX 5060 Ti Triple Fan">
+          <div class="product-card__content">
+            <h3>PNY RTX 5060 Ti Triple Fan</h3>
+            <p>Refrigeración eficiente y 8 GB de VRAM.</p>
+            <div class="product-meta">
+              <strong>S/ 2,112</strong>
+              <span class="stock stock-medium">10 disponibles</span>
+            </div>
+            <button class="btn btn-primary product-button">Comprar</button>
+          </div>
+        </article>
+
+        <article class="product-card" data-name="Zotac RTX 5060 Twin Edge OC" data-category="tarjetas-video" data-price="1625" data-stock="10">
+          <img src="assets/product-3.svg" alt="Zotac RTX 5060 Twin Edge OC">
+          <div class="product-card__content">
+            <h3>Zotac RTX 5060 Twin Edge OC</h3>
+            <p>Diseño compacto y rendimiento gaming con 8 GB de VRAM.</p>
+            <div class="product-meta">
+              <strong>S/ 1,625</strong>
+              <span class="stock stock-medium">10 disponibles</span>
+            </div>
+            <button class="btn btn-primary product-button">Comprar</button>
+          </div>
+        </article>
+
+        <article class="product-card" data-name="Segway Ninebot C2 Lite" data-category="movilidad" data-price="599" data-stock="10">
+          <img src="assets/product-2.svg" alt="Segway Ninebot C2 Lite">
+          <div class="product-card__content">
+            <h3>Segway Ninebot C2 Lite</h3>
+            <p>Scooter eléctrico Segway con autonomía aproximada de 10-11 km.</p>
+            <div class="product-meta">
+              <strong>S/ 599</strong>
+              <span class="stock stock-medium">10 disponibles</span>
+            </div>
+            <button class="btn btn-primary product-button">Comprar</button>
+          </div>
+        </article>
+
+        <article class="product-card" data-name="Segway Ninebot C2" data-category="movilidad" data-price="999" data-stock="10">
+          <img src="assets/product-2.svg" alt="Segway Ninebot C2">
+          <div class="product-card__content">
+            <h3>Segway Ninebot C2</h3>
+            <p>Scooter eléctrico Segway con autonomía aproximada de 11 km.</p>
+            <div class="product-meta">
+              <strong>S/ 999</strong>
+              <span class="stock stock-medium">10 disponibles</span>
+            </div>
+            <button class="btn btn-primary product-button">Comprar</button>
+          </div>
+        </article>
+
+        <article class="product-card" data-name="Segway E2 Plus II" data-category="movilidad" data-price="999" data-stock="10">
+          <img src="assets/product-2.svg" alt="Segway E2 Plus II">
+          <div class="product-card__content">
+            <h3>Segway E2 Plus II</h3>
+            <p>Scooter eléctrico Segway con autonomía aproximada de 25 km.</p>
+            <div class="product-meta">
+              <strong>S/ 999</strong>
+              <span class="stock stock-medium">10 disponibles</span>
+            </div>
+            <button class="btn btn-primary product-button">Comprar</button>
+          </div>
+        </article>
+
+        <article class="product-card" data-name="Segway E2 Pro" data-category="movilidad" data-price="1620" data-stock="10">
+          <img src="assets/product-2.svg" alt="Segway E2 Pro">
+          <div class="product-card__content">
+            <h3>Segway E2 Pro</h3>
+            <p>Scooter eléctrico Segway con autonomía aproximada de 35 km.</p>
+            <div class="product-meta">
+              <strong>S/ 1,620</strong>
+              <span class="stock stock-medium">10 disponibles</span>
+            </div>
+            <button class="btn btn-primary product-button">Comprar</button>
+          </div>
+        </article>
+
+        <article class="product-card" data-name="Segway E3 Pro" data-category="movilidad" data-price="1849" data-stock="10">
+          <img src="assets/product-2.svg" alt="Segway E3 Pro">
+          <div class="product-card__content">
+            <h3>Segway E3 Pro</h3>
+            <p>Scooter eléctrico Segway con autonomía aproximada de 55 km.</p>
+            <div class="product-meta">
+              <strong>S/ 1,849</strong>
+              <span class="stock stock-medium">10 disponibles</span>
+            </div>
+            <button class="btn btn-primary product-button">Comprar</button>
+          </div>
+        </article>
+
+        <article class="product-card" data-name="Segway F3" data-category="movilidad" data-price="2199" data-stock="10">
+          <img src="assets/product-2.svg" alt="Segway F3">
+          <div class="product-card__content">
+            <h3>Segway F3</h3>
+            <p>Scooter eléctrico Segway con autonomía aproximada de 70 km.</p>
+            <div class="product-meta">
+              <strong>S/ 2,199</strong>
+              <span class="stock stock-medium">10 disponibles</span>
+            </div>
+            <button class="btn btn-primary product-button">Comprar</button>
+          </div>
+        </article>
+
+        <article class="product-card" data-name="Segway MAX G3" data-category="movilidad" data-price="3349" data-stock="10">
+          <img src="assets/product-2.svg" alt="Segway MAX G3">
+          <div class="product-card__content">
+            <h3>Segway MAX G3</h3>
+            <p>Scooter eléctrico Segway con autonomía aproximada de 80 km.</p>
+            <div class="product-meta">
+              <strong>S/ 3,349</strong>
+              <span class="stock stock-medium">10 disponibles</span>
+            </div>
+            <button class="btn btn-primary product-button">Comprar</button>
+          </div>
+        </article>
+
+        <article class="product-card" data-name="Segway ZT3 Pro" data-category="movilidad" data-price="3399" data-stock="10">
+          <img src="assets/product-2.svg" alt="Segway ZT3 Pro">
+          <div class="product-card__content">
+            <h3>Segway ZT3 Pro</h3>
+            <p>Scooter eléctrico Segway de alto rendimiento.</p>
+            <div class="product-meta">
+              <strong>S/ 3,399</strong>
+              <span class="stock stock-medium">10 disponibles</span>
+            </div>
+            <button class="btn btn-primary product-button">Comprar</button>
+          </div>
+        </article>
+
+        <article class="product-card" data-name="Xiaomi Electric Scooter 6 GL" data-category="movilidad" data-price="1649" data-stock="10">
+          <img src="assets/product-2.svg" alt="Xiaomi Electric Scooter 6 GL">
+          <div class="product-card__content">
+            <h3>Xiaomi Electric Scooter 6 GL</h3>
+            <p>Scooter eléctrico Xiaomi para movilidad urbana.</p>
+            <div class="product-meta">
+              <strong>S/ 1,649</strong>
+              <span class="stock stock-medium">10 disponibles</span>
+            </div>
+            <button class="btn btn-primary product-button">Comprar</button>
+          </div>
+        </article>
+
+        <article class="product-card" data-name="Navee Easyride 25 Pro" data-category="movilidad" data-price="1299" data-stock="10">
+          <img src="assets/product-2.svg" alt="Navee Easyride 25 Pro">
+          <div class="product-card__content">
+            <h3>Navee Easyride 25 Pro</h3>
+            <p>Scooter eléctrico Navee para desplazamientos urbanos.</p>
+            <div class="product-meta">
+              <strong>S/ 1,299</strong>
+              <span class="stock stock-medium">10 disponibles</span>
+            </div>
+            <button class="btn btn-primary product-button">Comprar</button>
+          </div>
+        </article>
+
+        <article class="product-card" data-name="ASUS Prime B650M-F" data-category="placas-madre" data-price="330.50" data-stock="10">
+          <img src="assets/product-3.svg" alt="ASUS Prime B650M-F">
+          <div class="product-card__content">
+            <h3>ASUS Prime B650M-F</h3>
+            <p>Placa madre ASUS con socket AM5.</p>
+            <div class="product-meta">
+              <strong>S/ 330.50</strong>
+              <span class="stock stock-medium">10 disponibles</span>
+            </div>
+            <button class="btn btn-primary product-button">Comprar</button>
+          </div>
+        </article>
+
+        <article class="product-card" data-name="ASUS TUF Gaming B650M-Plus WiFi" data-category="placas-madre" data-price="784" data-stock="10">
+          <img src="assets/product-3.svg" alt="ASUS TUF Gaming B650M-Plus WiFi">
+          <div class="product-card__content">
+            <h3>ASUS TUF Gaming B650M-Plus WiFi</h3>
+            <p>Placa madre ASUS con socket AM5.</p>
+            <div class="product-meta">
+              <strong>S/ 784</strong>
+              <span class="stock stock-medium">10 disponibles</span>
+            </div>
+            <button class="btn btn-primary product-button">Comprar</button>
+          </div>
+        </article>
+
+        <article class="product-card" data-name="ASUS Pro B650M-CT-CSM" data-category="placas-madre" data-price="647.50" data-stock="10">
+          <img src="assets/product-3.svg" alt="ASUS Pro B650M-CT-CSM">
+          <div class="product-card__content">
+            <h3>ASUS Pro B650M-CT-CSM</h3>
+            <p>Placa madre ASUS con socket AM5.</p>
+            <div class="product-meta">
+              <strong>S/ 647.50</strong>
+              <span class="stock stock-medium">10 disponibles</span>
+            </div>
+            <button class="btn btn-primary product-button">Comprar</button>
+          </div>
+        </article>
+
+        <article class="product-card" data-name="ASRock B650M-H/M.2+" data-category="placas-madre" data-price="364.50" data-stock="10">
+          <img src="assets/product-3.svg" alt="ASRock B650M-H/M.2+">
+          <div class="product-card__content">
+            <h3>ASRock B650M-H/M.2+</h3>
+            <p>Placa madre ASRock con socket AM5.</p>
+            <div class="product-meta">
+              <strong>S/ 364.50</strong>
+              <span class="stock stock-medium">10 disponibles</span>
+            </div>
+            <button class="btn btn-primary product-button">Comprar</button>
+          </div>
+        </article>
+
+        <article class="product-card" data-name="Gigabyte B650M D3HP" data-category="placas-madre" data-price="426" data-stock="10">
+          <img src="assets/product-3.svg" alt="Gigabyte B650M D3HP">
+          <div class="product-card__content">
+            <h3>Gigabyte B650M D3HP</h3>
+            <p>Placa madre Gigabyte con socket AM5.</p>
+            <div class="product-meta">
+              <strong>S/ 426</strong>
+              <span class="stock stock-medium">10 disponibles</span>
+            </div>
+            <button class="btn btn-primary product-button">Comprar</button>
+          </div>
+        </article>
+
+        <article class="product-card" data-name="Gigabyte B650M H" data-category="placas-madre" data-price="433" data-stock="10">
+          <img src="assets/product-3.svg" alt="Gigabyte B650M H">
+          <div class="product-card__content">
+            <h3>Gigabyte B650M H</h3>
+            <p>Placa madre Gigabyte con socket AM5.</p>
+            <div class="product-meta">
+              <strong>S/ 433</strong>
+              <span class="stock stock-medium">10 disponibles</span>
+            </div>
+            <button class="btn btn-primary product-button">Comprar</button>
+          </div>
+        </article>
+
+        <article class="product-card" data-name="Gigabyte B650 AERO G WiFi" data-category="placas-madre" data-price="944.50" data-stock="10">
+          <img src="assets/product-3.svg" alt="Gigabyte B650 AERO G WiFi">
+          <div class="product-card__content">
+            <h3>Gigabyte B650 AERO G WiFi</h3>
+            <p>Placa madre Gigabyte con socket AM5.</p>
+            <div class="product-meta">
+              <strong>S/ 944.50</strong>
+              <span class="stock stock-medium">10 disponibles</span>
+            </div>
+            <button class="btn btn-primary product-button">Comprar</button>
+          </div>
+        </article>
+
+        <article class="product-card" data-name="MSI B650 Gaming Plus WiFi" data-category="placas-madre" data-price="634" data-stock="10">
+          <img src="assets/product-3.svg" alt="MSI B650 Gaming Plus WiFi">
+          <div class="product-card__content">
+            <h3>MSI B650 Gaming Plus WiFi</h3>
+            <p>Placa madre MSI con socket AM5.</p>
+            <div class="product-meta">
+              <strong>S/ 634</strong>
+              <span class="stock stock-medium">10 disponibles</span>
+            </div>
+            <button class="btn btn-primary product-button">Comprar</button>
+          </div>
+        </article>
+
+        <article class="product-card" data-name="MSI B650M Project Zero" data-category="placas-madre" data-price="750" data-stock="10">
+          <img src="assets/product-3.svg" alt="MSI B650M Project Zero">
+          <div class="product-card__content">
+            <h3>MSI B650M Project Zero</h3>
+            <p>Placa madre MSI con socket AM5.</p>
+            <div class="product-meta">
+              <strong>S/ 750</strong>
+              <span class="stock stock-medium">10 disponibles</span>
+            </div>
+            <button class="btn btn-primary product-button">Comprar</button>
+          </div>
+        </article>
+
+        <article class="product-card" data-name="MSI B650 MPG Edge WiFi" data-category="placas-madre" data-price="1019.50" data-stock="10">
+          <img src="assets/product-3.svg" alt="MSI B650 MPG Edge WiFi">
+          <div class="product-card__content">
+            <h3>MSI B650 MPG Edge WiFi</h3>
+            <p>Placa madre MSI con socket AM5.</p>
+            <div class="product-meta">
+              <strong>S/ 1,019.50</strong>
+              <span class="stock stock-medium">10 disponibles</span>
+            </div>
+            <button class="btn btn-primary product-button">Comprar</button>
+          </div>
+        </article>
+
+        <article class="product-card" data-name="AMD Athlon 3000G" data-category="procesadores" data-price="219" data-stock="10">
+          <img src="assets/product-3.svg" alt="AMD Athlon 3000G">
+          <div class="product-card__content">
+            <h3>AMD Athlon 3000G</h3>
+            <p>Procesador AMD de 2 núcleos.</p>
+            <div class="product-meta">
+              <strong>S/ 219</strong>
+              <span class="stock stock-medium">10 disponibles</span>
+            </div>
+            <button class="btn btn-primary product-button">Comprar</button>
+          </div>
+        </article>
+
+        <article class="product-card" data-name="AMD Ryzen 5 5600G" data-category="procesadores" data-price="899" data-stock="10">
+          <img src="assets/product-3.svg" alt="AMD Ryzen 5 5600G">
+          <div class="product-card__content">
+            <h3>AMD Ryzen 5 5600G</h3>
+            <p>Procesador AMD de 6 núcleos.</p>
+            <div class="product-meta">
+              <strong>S/ 899</strong>
+              <span class="stock stock-medium">10 disponibles</span>
+            </div>
+            <button class="btn btn-primary product-button">Comprar</button>
+          </div>
+        </article>
+
+        <article class="product-card" data-name="AMD Ryzen 5 7600X" data-category="procesadores" data-price="1049" data-stock="10">
+          <img src="assets/product-3.svg" alt="AMD Ryzen 5 7600X">
+          <div class="product-card__content">
+            <h3>AMD Ryzen 5 7600X</h3>
+            <p>Procesador AMD de 6 núcleos.</p>
+            <div class="product-meta">
+              <strong>S/ 1,049</strong>
+              <span class="stock stock-medium">10 disponibles</span>
+            </div>
+            <button class="btn btn-primary product-button">Comprar</button>
+          </div>
+        </article>
+
+        <article class="product-card" data-name="AMD Ryzen 7 5700" data-category="procesadores" data-price="640" data-stock="10">
+          <img src="assets/product-3.svg" alt="AMD Ryzen 7 5700">
+          <div class="product-card__content">
+            <h3>AMD Ryzen 7 5700</h3>
+            <p>Procesador AMD de 8 núcleos.</p>
+            <div class="product-meta">
+              <strong>~S/ 640</strong>
+              <span class="stock stock-medium">10 disponibles</span>
+            </div>
+            <button class="btn btn-primary product-button">Comprar</button>
+          </div>
+        </article>
+
+        <article class="product-card" data-name="AMD Ryzen 7 7700X" data-category="procesadores" data-price="1600" data-stock="10">
+          <img src="assets/product-3.svg" alt="AMD Ryzen 7 7700X">
+          <div class="product-card__content">
+            <h3>AMD Ryzen 7 7700X</h3>
+            <p>Procesador AMD de 8 núcleos.</p>
+            <div class="product-meta">
+              <strong>~S/ 1,600</strong>
+              <span class="stock stock-medium">10 disponibles</span>
+            </div>
+            <button class="btn btn-primary product-button">Comprar</button>
+          </div>
+        </article>
+
+        <article class="product-card" data-name="Intel Core i3-14100" data-category="procesadores" data-price="699" data-stock="10">
+          <img src="assets/product-3.svg" alt="Intel Core i3-14100">
+          <div class="product-card__content">
+            <h3>Intel Core i3-14100</h3>
+            <p>Procesador Intel de 4 núcleos.</p>
+            <div class="product-meta">
+              <strong>S/ 699</strong>
+              <span class="stock stock-medium">10 disponibles</span>
+            </div>
+            <button class="btn btn-primary product-button">Comprar</button>
+          </div>
+        </article>
+
+        <article class="product-card" data-name="Intel Core i5-13400F" data-category="procesadores" data-price="949" data-stock="10">
+          <img src="assets/product-3.svg" alt="Intel Core i5-13400F">
+          <div class="product-card__content">
+            <h3>Intel Core i5-13400F</h3>
+            <p>Procesador Intel de 10 núcleos.</p>
+            <div class="product-meta">
+              <strong>S/ 949</strong>
+              <span class="stock stock-medium">10 disponibles</span>
+            </div>
+            <button class="btn btn-primary product-button">Comprar</button>
+          </div>
+        </article>
+
+        <article class="product-card" data-name="Intel Core i5-14400" data-category="procesadores" data-price="950" data-stock="10">
+          <img src="assets/product-3.svg" alt="Intel Core i5-14400">
+          <div class="product-card__content">
+            <h3>Intel Core i5-14400</h3>
+            <p>Procesador Intel de 10 núcleos.</p>
+            <div class="product-meta">
+              <strong>~S/ 950</strong>
+              <span class="stock stock-medium">10 disponibles</span>
+            </div>
+            <button class="btn btn-primary product-button">Comprar</button>
+          </div>
+        </article>
+
+        <article class="product-card" data-name="Intel Core Ultra 5 225F" data-category="procesadores" data-price="690" data-stock="10">
+          <img src="assets/product-3.svg" alt="Intel Core Ultra 5 225F">
+          <div class="product-card__content">
+            <h3>Intel Core Ultra 5 225F</h3>
+            <p>Procesador Intel con núcleos no especificados.</p>
+            <div class="product-meta">
+              <strong>S/ 690</strong>
+              <span class="stock stock-medium">10 disponibles</span>
+            </div>
+            <button class="btn btn-primary product-button">Comprar</button>
+          </div>
+        </article>
+
+        <article class="product-card" data-name="Intel Core Ultra 7 265F" data-category="procesadores" data-price="1618" data-stock="10">
+          <img src="assets/product-3.svg" alt="Intel Core Ultra 7 265F">
+          <div class="product-card__content">
+            <h3>Intel Core Ultra 7 265F</h3>
+            <p>Procesador Intel con núcleos no especificados.</p>
+            <div class="product-meta">
+              <strong>S/ 1,618</strong>
+              <span class="stock stock-medium">10 disponibles</span>
+            </div>
+            <button class="btn btn-primary product-button">Comprar</button>
+          </div>
+        </article>
+
+        <article class="product-card" data-name="Teros TE-2416CS" data-category="monitores" data-price="511.50" data-stock="10">
+          <img src="assets/product-3.svg" alt="Teros TE-2416CS">
+          <div class="product-card__content">
+            <h3>Teros TE-2416CS</h3>
+            <p>Monitor Teros de 23.8 pulgadas, resolución 2K y 100 Hz.</p>
+            <div class="product-meta">
+              <strong>S/ 511.50</strong>
+              <span class="stock stock-medium">10 disponibles</span>
+            </div>
+            <button class="btn btn-primary product-button">Comprar</button>
+          </div>
+        </article>
+
+        <article class="product-card" data-name="ASUS ProArt PA248QV" data-category="monitores" data-price="722.50" data-stock="10">
+          <img src="assets/product-3.svg" alt="ASUS ProArt PA248QV">
+          <div class="product-card__content">
+            <h3>ASUS ProArt PA248QV</h3>
+            <p>Monitor ASUS de 24 pulgadas con resolución FHD.</p>
+            <div class="product-meta">
+              <strong>S/ 722.50</strong>
+              <span class="stock stock-medium">10 disponibles</span>
+            </div>
+            <button class="btn btn-primary product-button">Comprar</button>
+          </div>
+        </article>
+
+        <article class="product-card" data-name="Dell Pro E2425HSM" data-category="monitores" data-price="528.50" data-stock="10">
+          <img src="assets/product-3.svg" alt="Dell Pro E2425HSM">
+          <div class="product-card__content">
+            <h3>Dell Pro E2425HSM</h3>
+            <p>Monitor Dell de 24 pulgadas, resolución FHD y 100 Hz.</p>
+            <div class="product-meta">
+              <strong>S/ 528.50</strong>
+              <span class="stock stock-medium">10 disponibles</span>
+            </div>
+            <button class="btn btn-primary product-button">Comprar</button>
+          </div>
+        </article>
+
+        <article class="product-card" data-name="LG UltraGear 24G414B" data-category="monitores" data-price="364.50" data-stock="10">
+          <img src="assets/product-3.svg" alt="LG UltraGear 24G414B">
+          <div class="product-card__content">
+            <h3>LG UltraGear 24G414B</h3>
+            <p>Monitor LG de 24 pulgadas, resolución FHD y 144 Hz.</p>
+            <div class="product-meta">
+              <strong>S/ 364.50</strong>
+              <span class="stock stock-medium">10 disponibles</span>
+            </div>
+            <button class="btn btn-primary product-button">Comprar</button>
+          </div>
+        </article>
+
+        <article class="product-card" data-name="MSI PRO MP243W" data-category="monitores" data-price="354.50" data-stock="10">
+          <img src="assets/product-3.svg" alt="MSI PRO MP243W">
+          <div class="product-card__content">
+            <h3>MSI PRO MP243W</h3>
+            <p>Monitor MSI de 24 pulgadas, resolución FHD y 144 Hz.</p>
+            <div class="product-meta">
+              <strong>S/ 354.50</strong>
+              <span class="stock stock-medium">10 disponibles</span>
+            </div>
+            <button class="btn btn-primary product-button">Comprar</button>
+          </div>
+        </article>
+
+        <article class="product-card" data-name="Samsung Essential S4" data-category="monitores" data-price="381.50" data-stock="10">
+          <img src="assets/product-3.svg" alt="Samsung Essential S4">
+          <div class="product-card__content">
+            <h3>Samsung Essential S4</h3>
+            <p>Monitor Samsung de 24 pulgadas, resolución FHD y 100 Hz.</p>
+            <div class="product-meta">
+              <strong>S/ 381.50</strong>
+              <span class="stock stock-medium">10 disponibles</span>
+            </div>
+            <button class="btn btn-primary product-button">Comprar</button>
+          </div>
+        </article>
+
+        <article class="product-card" data-name="Samsung Odyssey G3" data-category="monitores" data-price="443" data-stock="10">
+          <img src="assets/product-3.svg" alt="Samsung Odyssey G3">
+          <div class="product-card__content">
+            <h3>Samsung Odyssey G3</h3>
+            <p>Monitor Samsung de 24 pulgadas, resolución FHD y 180 Hz.</p>
+            <div class="product-meta">
+              <strong>S/ 443</strong>
+              <span class="stock stock-medium">10 disponibles</span>
+            </div>
+            <button class="btn btn-primary product-button">Comprar</button>
+          </div>
+        </article>
+
+        <article class="product-card" data-name="LG UltraGear 25G523B" data-category="monitores" data-price="426" data-stock="10">
+          <img src="assets/product-3.svg" alt="LG UltraGear 25G523B">
+          <div class="product-card__content">
+            <h3>LG UltraGear 25G523B</h3>
+            <p>Monitor LG de 24.4 pulgadas, resolución FHD y 200 Hz.</p>
+            <div class="product-meta">
+              <strong>S/ 426</strong>
+              <span class="stock stock-medium">10 disponibles</span>
+            </div>
+            <button class="btn btn-primary product-button">Comprar</button>
+          </div>
+        </article>
+
+        <article class="product-card" data-name="ASUS TUF VG259Q5A" data-category="monitores" data-price="409" data-stock="10">
+          <img src="assets/product-3.svg" alt="ASUS TUF VG259Q5A">
+          <div class="product-card__content">
+            <h3>ASUS TUF VG259Q5A</h3>
+            <p>Monitor ASUS de 24.5 pulgadas, resolución FHD y 200 Hz.</p>
+            <div class="product-meta">
+              <strong>S/ 409</strong>
+              <span class="stock stock-medium">10 disponibles</span>
+            </div>
+            <button class="btn btn-primary product-button">Comprar</button>
+          </div>
+        </article>
+
+        <article class="product-card" data-name="Samsung Odyssey 27 pulgadas" data-category="monitores" data-price="880" data-stock="10">
+          <img src="assets/product-3.svg" alt="Samsung Odyssey 27 pulgadas">
+          <div class="product-card__content">
+            <h3>Samsung Odyssey 27&quot;</h3>
+            <p>Monitor Samsung de 27 pulgadas, resolución FHD y 180 Hz.</p>
+            <div class="product-meta">
+              <strong>~S/ 880</strong>
+              <span class="stock stock-medium">10 disponibles</span>
+            </div>
+            <button class="btn btn-primary product-button">Comprar</button>
+          </div>
+        </article>
+
+        <article class="product-card" data-name="HP Pro Mini 260 G9" data-category="computadoras-escritorio" data-price="2182" data-stock="10">
+          <img src="assets/product-3.svg" alt="HP Pro Mini 260 G9">
+          <div class="product-card__content">
+            <h3>HP Pro Mini 260 G9</h3>
+            <p>Computadora mini con procesador i5, 16 GB de RAM y 512 GB.</p>
+            <div class="product-meta">
+              <strong>S/ 2,182</strong>
+              <span class="stock stock-medium">10 disponibles</span>
+            </div>
+            <button class="btn btn-primary product-button">Comprar</button>
+          </div>
+        </article>
+
+        <article class="product-card" data-name="HP Pro Mini 260 G9 W11 Pro" data-category="computadoras-escritorio" data-price="2840.50" data-stock="10">
+          <img src="assets/product-3.svg" alt="HP Pro Mini 260 G9 W11 Pro">
+          <div class="product-card__content">
+            <h3>HP Pro Mini 260 G9 W11 Pro</h3>
+            <p>Computadora mini con procesador i5, 16 GB de RAM y 512 GB.</p>
+            <div class="product-meta">
+              <strong>S/ 2,840.50</strong>
+              <span class="stock stock-medium">10 disponibles</span>
+            </div>
+            <button class="btn btn-primary product-button">Comprar</button>
+          </div>
+        </article>
+
+        <article class="product-card" data-name="HP ProDesk 4 Mini G1i" data-category="computadoras-escritorio" data-price="3972.50" data-stock="10">
+          <img src="assets/product-3.svg" alt="HP ProDesk 4 Mini G1i">
+          <div class="product-card__content">
+            <h3>HP ProDesk 4 Mini G1i</h3>
+            <p>Computadora mini con procesador Ultra 5, 24 GB de RAM y 512 GB.</p>
+            <div class="product-meta">
+              <strong>S/ 3,972.50</strong>
+              <span class="stock stock-medium">10 disponibles</span>
+            </div>
+            <button class="btn btn-primary product-button">Comprar</button>
+          </div>
+        </article>
+
+        <article class="product-card" data-name="Dell Pro QCM1250 MFF" data-category="computadoras-escritorio" data-price="4671.50" data-stock="10">
+          <img src="assets/product-3.svg" alt="Dell Pro QCM1250 MFF">
+          <div class="product-card__content">
+            <h3>Dell Pro QCM1250 MFF</h3>
+            <p>Computadora compacta con procesador i7, 16 GB de RAM y 512 GB.</p>
+            <div class="product-meta">
+              <strong>S/ 4,671.50</strong>
+              <span class="stock stock-medium">10 disponibles</span>
+            </div>
+            <button class="btn btn-primary product-button">Comprar</button>
+          </div>
+        </article>
+
+        <article class="product-card" data-name="Lenovo ThinkCentre Neo 50q Ultra 5" data-category="computadoras-escritorio" data-price="3065.50" data-stock="10">
+          <img src="assets/product-3.svg" alt="Lenovo ThinkCentre Neo 50q Ultra 5">
+          <div class="product-card__content">
+            <h3>Lenovo ThinkCentre Neo 50q</h3>
+            <p>Procesador Ultra 5, 16 GB de RAM y almacenamiento de 512 GB.</p>
+            <div class="product-meta">
+              <strong>S/ 3,065.50</strong>
+              <span class="stock stock-medium">10 disponibles</span>
+            </div>
+            <button class="btn btn-primary product-button">Comprar</button>
+          </div>
+        </article>
+
+        <article class="product-card" data-name="Lenovo ThinkCentre Neo 50q Ultra 7" data-category="computadoras-escritorio" data-price="3955.50" data-stock="10">
+          <img src="assets/product-3.svg" alt="Lenovo ThinkCentre Neo 50q Ultra 7">
+          <div class="product-card__content">
+            <h3>Lenovo ThinkCentre Neo 50q</h3>
+            <p>Procesador Ultra 7, 16 GB de RAM y almacenamiento de 512 GB.</p>
+            <div class="product-meta">
+              <strong>S/ 3,955.50</strong>
+              <span class="stock stock-medium">10 disponibles</span>
+            </div>
+            <button class="btn btn-primary product-button">Comprar</button>
+          </div>
+        </article>
+
+        <article class="product-card" data-name="ASUS ExpertCenter D700SSF" data-category="computadoras-escritorio" data-price="4429.50" data-stock="10">
+          <img src="assets/product-3.svg" alt="ASUS ExpertCenter D700SSF">
+          <div class="product-card__content">
+            <h3>ASUS ExpertCenter D700SSF</h3>
+            <p>Procesador Ultra 7, 16 GB de RAM y almacenamiento de 1 TB.</p>
+            <div class="product-meta">
+              <strong>S/ 4,429.50</strong>
+              <span class="stock stock-medium">10 disponibles</span>
+            </div>
+            <button class="btn btn-primary product-button">Comprar</button>
+          </div>
+        </article>
+
+        <article class="product-card" data-name="Lenovo Legion Gaming" data-category="computadoras-escritorio" data-price="4500" data-stock="10">
+          <img src="assets/product-3.svg" alt="Lenovo Legion Gaming">
+          <div class="product-card__content">
+            <h3>Lenovo Legion Gaming</h3>
+            <p>Computadora gaming con Ryzen 7, 16 GB de RAM y tarjeta RTX.</p>
+            <div class="product-meta">
+              <strong>~S/ 4,500</strong>
+              <span class="stock stock-medium">10 disponibles</span>
+            </div>
+            <button class="btn btn-primary product-button">Comprar</button>
+          </div>
+        </article>
+
+        <article class="product-card" data-name="HP Omen Desktop" data-category="computadoras-escritorio" data-price="5500" data-stock="10">
+          <img src="assets/product-3.svg" alt="HP Omen Desktop">
+          <div class="product-card__content">
+            <h3>HP Omen Desktop</h3>
+            <p>Computadora gaming con Ryzen o Core y tarjeta RTX.</p>
+            <div class="product-meta">
+              <strong>~S/ 5,500</strong>
+              <span class="stock stock-medium">10 disponibles</span>
+            </div>
+            <button class="btn btn-primary product-button">Comprar</button>
+          </div>
+        </article>
+
+        <article class="product-card" data-name="ASUS ROG Gaming Desktop" data-category="computadoras-escritorio" data-price="6000" data-stock="10">
+          <img src="assets/product-3.svg" alt="ASUS ROG Gaming Desktop">
+          <div class="product-card__content">
+            <h3>ASUS ROG Gaming Desktop</h3>
+            <p>Computadora gaming con procesador Core o Ryzen y tarjeta RTX.</p>
+            <div class="product-meta">
+              <strong>~S/ 6,000+</strong>
+              <span class="stock stock-medium">10 disponibles</span>
+            </div>
+            <button class="btn btn-primary product-button">Comprar</button>
+          </div>
+        </article>
+
+        <article class="product-card" data-name="Logitech Mouse G305 Lightspeed" data-category="perifericos" data-price="145" data-stock="10">
+          <img src="assets/product-1.svg" alt="Logitech Mouse G305 Lightspeed">
+          <div class="product-card__content">
+            <h3>Logitech Mouse G305 Lightspeed</h3>
+            <p>Mouse inalámbrico Logitech para gaming.</p>
+            <div class="product-meta">
+              <strong>S/ 145</strong>
+              <span class="stock stock-medium">10 disponibles</span>
+            </div>
+            <button class="btn btn-primary product-button">Comprar</button>
+          </div>
+        </article>
+
+        <article class="product-card" data-name="Logitech Mouse G203" data-category="perifericos" data-price="86" data-stock="10">
+          <img src="assets/product-1.svg" alt="Logitech Mouse G203">
+          <div class="product-card__content">
+            <h3>Logitech Mouse G203</h3>
+            <p>Mouse Logitech para gaming y uso diario.</p>
+            <div class="product-meta">
+              <strong>S/ 86</strong>
+              <span class="stock stock-medium">10 disponibles</span>
+            </div>
+            <button class="btn btn-primary product-button">Comprar</button>
+          </div>
+        </article>
+
+        <article class="product-card" data-name="Redragon Mouse Griffin White" data-category="perifericos" data-price="110" data-stock="10">
+          <img src="assets/product-1.svg" alt="Redragon Mouse Griffin White">
+          <div class="product-card__content">
+            <h3>Redragon Mouse Griffin White</h3>
+            <p>Mouse Redragon de diseño blanco para gaming.</p>
+            <div class="product-meta">
+              <strong>S/ 110</strong>
+              <span class="stock stock-medium">10 disponibles</span>
+            </div>
+            <button class="btn btn-primary product-button">Comprar</button>
+          </div>
+        </article>
+
+        <article class="product-card" data-name="Genius Teclado + Mouse KM-100SE" data-category="perifericos" data-price="37.50" data-stock="10">
+          <img src="assets/product-1.svg" alt="Genius Teclado y Mouse KM-100SE">
+          <div class="product-card__content">
+            <h3>Genius Teclado + Mouse KM-100SE</h3>
+            <p>Combo Genius de teclado y mouse.</p>
+            <div class="product-meta">
+              <strong>S/ 37.50</strong>
+              <span class="stock stock-medium">10 disponibles</span>
+            </div>
+            <button class="btn btn-primary product-button">Comprar</button>
+          </div>
+        </article>
+
+        <article class="product-card" data-name="Antryx Teclado + Mouse Precision PS960" data-category="perifericos" data-price="34" data-stock="10">
+          <img src="assets/product-1.svg" alt="Antryx Teclado y Mouse Precision PS960">
+          <div class="product-card__content">
+            <h3>Antryx Teclado + Mouse Precision PS960</h3>
+            <p>Combo Antryx de teclado y mouse.</p>
+            <div class="product-meta">
+              <strong>S/ 34</strong>
+              <span class="stock stock-medium">10 disponibles</span>
+            </div>
+            <button class="btn btn-primary product-button">Comprar</button>
+          </div>
+        </article>
+
+        <article class="product-card" data-name="Philips Teclado SPT6602 Wireless" data-category="perifericos" data-price="34" data-stock="10">
+          <img src="assets/product-1.svg" alt="Philips Teclado SPT6602 Wireless">
+          <div class="product-card__content">
+            <h3>Philips Teclado SPT6602 Wireless</h3>
+            <p>Teclado inalámbrico Philips para escritorio.</p>
+            <div class="product-meta">
+              <strong>S/ 34</strong>
+              <span class="stock stock-medium">10 disponibles</span>
+            </div>
+            <button class="btn btn-primary product-button">Comprar</button>
+          </div>
+        </article>
+
+        <article class="product-card" data-name="Antryx Combo GC-3100 X3" data-category="perifericos" data-price="177" data-stock="10">
+          <img src="assets/product-1.svg" alt="Antryx Combo GC-3100 X3">
+          <div class="product-card__content">
+            <h3>Antryx Combo GC-3100 X3</h3>
+            <p>Combo Antryx para completar tu estación de juego.</p>
+            <div class="product-meta">
+              <strong>S/ 177</strong>
+              <span class="stock stock-medium">10 disponibles</span>
+            </div>
+            <button class="btn btn-primary product-button">Comprar</button>
+          </div>
+        </article>
+
+        <article class="product-card" data-name="DeepCool Cooler AG400 G2 Plus" data-category="perifericos" data-price="110" data-stock="10">
+          <img src="assets/product-3.svg" alt="DeepCool Cooler AG400 G2 Plus">
+          <div class="product-card__content">
+            <h3>DeepCool Cooler AG400 G2 Plus</h3>
+            <p>Cooler DeepCool para refrigeración del procesador.</p>
+            <div class="product-meta">
+              <strong>S/ 110</strong>
+              <span class="stock stock-medium">10 disponibles</span>
+            </div>
+            <button class="btn btn-primary product-button">Comprar</button>
+          </div>
+        </article>
+
+        <article class="product-card" data-name="Corsair Refrigeración líquida iCUE Link Titan 240" data-category="perifericos" data-price="240" data-stock="10">
+          <img src="assets/product-3.svg" alt="Corsair Refrigeración líquida iCUE Link Titan 240">
+          <div class="product-card__content">
+            <h3>Corsair Refrigeración líquida iCUE Link Titan 240</h3>
+            <p>Sistema Corsair de refrigeración líquida para PC.</p>
+            <div class="product-meta">
+              <strong>S/ 240</strong>
+              <span class="stock stock-medium">10 disponibles</span>
+            </div>
+            <button class="btn btn-primary product-button">Comprar</button>
+          </div>
+        </article>
+
+        <article class="product-card" data-name="XPG Fuente Pylon 650W 80+ Bronze" data-category="perifericos" data-price="255" data-stock="10">
+          <img src="assets/product-3.svg" alt="XPG Fuente Pylon 650W 80 Plus Bronze">
+          <div class="product-card__content">
+            <h3>XPG Fuente Pylon 650W 80+ Bronze</h3>
+            <p>Fuente de poder XPG de 650 W con certificación 80+ Bronze.</p>
+            <div class="product-meta">
+              <strong>S/ 255</strong>
+              <span class="stock stock-medium">10 disponibles</span>
+            </div>
+            <button class="btn btn-primary product-button">Comprar</button>
+          </div>
+        </article>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2026 E-Store. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+  <div class="quantity-modal" id="quantity-modal" hidden>
+    <div class="quantity-modal__backdrop" data-close-quantity-modal></div>
+    <section class="quantity-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="quantity-modal-title">
+      <button class="quantity-modal__close" type="button" aria-label="Cerrar" data-close-quantity-modal>&times;</button>
+      <p class="eyebrow">Agregar al carrito</p>
+      <h2 id="quantity-modal-title">¿Cuántos equipos deseas?</h2>
+      <p class="quantity-modal__product" id="quantity-modal-product"></p>
+      <label class="quantity-modal__label" for="quantity-input">Cantidad</label>
+      <input id="quantity-input" type="number" min="1" value="1">
+      <p class="quantity-modal__stock" id="quantity-modal-stock"></p>
+      <div class="quantity-modal__actions">
+        <button class="btn btn-secondary" type="button" data-close-quantity-modal>Cancelar</button>
+        <button class="btn btn-primary" type="button" id="confirm-quantity">Agregar al carrito</button>
+      </div>
+    </section>
+  </div>
+  <script src="scripts/productos.js"></script>
+  <script src="scripts/whatsapp.js"></script>
+</body>
+</html>
