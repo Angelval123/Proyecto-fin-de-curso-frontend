@@ -31,18 +31,7 @@ const getStockByPrice = (price) => {
   return 30;
 };
 
-const categoryImages = {
-  camaras: 'https://images.unsplash.com/photo-1587825140708-dfaf72ae4b04?auto=format&fit=crop&w=900&q=80',
-  computacion: 'https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&fit=crop&w=900&q=80',
-  'computadoras-escritorio': 'https://images.unsplash.com/photo-1587831990711-23ca6441447b?auto=format&fit=crop&w=900&q=80',
-  perifericos: 'https://images.unsplash.com/photo-1587829741301-dc798b83add3?auto=format&fit=crop&w=900&q=80',
-  componentes: 'https://images.unsplash.com/photo-1591488320449-011701bb6704?auto=format&fit=crop&w=900&q=80',
-  'placas-madre': 'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=900&q=80',
-  procesadores: 'https://images.unsplash.com/photo-1591799264318-7e6ef8ddb7ea?auto=format&fit=crop&w=900&q=80',
-  monitores: 'https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?auto=format&fit=crop&w=900&q=80',
-  'tarjetas-video': 'https://images.unsplash.com/photo-1591488320449-011701bb6704?auto=format&fit=crop&w=900&q=80',
-  movilidad: 'https://images.unsplash.com/photo-1558981806-ec527fa84c39?auto=format&fit=crop&w=900&q=80'
-};
+const categoryImageIndexes = new Map();
 
 document.querySelectorAll('.product-card').forEach((productCard) => {
   const limitedStockCategories = ['movilidad', 'procesadores'];
@@ -53,12 +42,13 @@ document.querySelectorAll('.product-card').forEach((productCard) => {
   const stockLabel = productCard.querySelector('.stock');
   if (stockLabel) stockLabel.textContent = `${stock} disponibles`;
   const productImage = productCard.querySelector('img');
-  const categoryImage = categoryImages[productCard.dataset.category];
-  if (productImage && categoryImage) {
-    const fallbackImage = productImage.getAttribute('src');
-    productImage.src = categoryImage;
+  if (productImage) {
+    const category = productCard.dataset.category;
+    const imageIndex = categoryImageIndexes.get(category) || 0;
+    categoryImageIndexes.set(category, imageIndex + 1);
+    productImage.src = window.getEStoreProductImage(category, productCard.dataset.name, imageIndex);
     productImage.addEventListener('error', () => {
-      productImage.src = fallbackImage;
+      productImage.src = 'assets/principal.jpg';
     }, { once: true });
   }
 
@@ -235,6 +225,9 @@ if (searchInput && sortSelect && catalogGrid) {
   typeFilter.addEventListener('change', renderCatalog);
   stockFilter.addEventListener('change', renderCatalog);
   renderCatalog();
+
+  const initialCategory = new URLSearchParams(window.location.search).get('categoria');
+  [...categoryLinks].find((link) => link.dataset.filter === initialCategory)?.click();
 }
 
 updateCartCount();

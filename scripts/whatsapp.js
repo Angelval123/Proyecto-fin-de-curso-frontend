@@ -1,4 +1,4 @@
-const WHATSAPP_NUMBER = '51987654321';
+const WHATSAPP_NUMBER = '51970878849';
 const WHATSAPP_MESSAGE = 'Hola, necesito asesoría para elegir un producto.';
 
 const whatsappLink = document.createElement('a');

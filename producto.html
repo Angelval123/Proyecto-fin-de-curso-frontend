@@ -20,6 +20,7 @@
         <a href="nosotros.html">Nosotros</a>
       </nav>
       <div class="nav-actions">
+        <button class="icon-button" type="button" data-header-search-toggle aria-label="Buscar productos" aria-expanded="false">⌕</button>
         <a class="btn btn-primary cart-button" href="carrito.html">Carrito <span>0</span></a>
       </div>
     </div>
@@ -30,7 +31,7 @@
       <a class="back-link product-detail__back" href="productos.html">← Volver al catálogo</a>
       <div class="product-detail__grid">
         <div class="product-detail__visual">
-          <img id="detail-image" src="assets/product-3.svg" alt="">
+          <img id="detail-image" src="assets/principal.jpg" alt="">
         </div>
         <div class="product-detail__content">
           <p class="eyebrow" id="detail-category">Producto</p>
@@ -39,8 +40,23 @@
           <p class="product-detail__description" id="detail-description"></p>
           <strong class="product-detail__price" id="detail-price"></strong>
           <div class="product-detail__discount" id="detail-discount"></div>
-          <a class="btn btn-primary" id="detail-buy" href="productos.html">Comprar este producto</a>
+          <button class="btn btn-primary" id="detail-buy" type="button">Comprar este producto</button>
         </div>
+      </div>
+    </section>
+
+    <section class="container product-rating" aria-labelledby="rating-title">
+      <div class="product-rating__summary">
+        <p class="eyebrow">Tu experiencia</p>
+        <h2 id="rating-title">¿Qué te pareció este producto?</h2>
+        <p id="rating-status" role="status">Selecciona una a cinco estrellas.</p>
+      </div>
+      <div class="rating-stars" role="group" aria-label="Selecciona de una a cinco estrellas">
+        <button type="button" data-rating="1" aria-label="1 estrella" aria-pressed="false">☆</button>
+        <button type="button" data-rating="2" aria-label="2 estrellas" aria-pressed="false">☆</button>
+        <button type="button" data-rating="3" aria-label="3 estrellas" aria-pressed="false">☆</button>
+        <button type="button" data-rating="4" aria-label="4 estrellas" aria-pressed="false">☆</button>
+        <button type="button" data-rating="5" aria-label="5 estrellas" aria-pressed="false">☆</button>
       </div>
     </section>
 
@@ -69,7 +85,25 @@
   <footer class="site-footer">
     <div class="container"><p>© 2026 E-Store. Todos los derechos reservados.</p></div>
   </footer>
-  <script src="scripts/producto.js"></script>
+  <div class="quantity-modal" id="quantity-modal" hidden>
+    <div class="quantity-modal__backdrop" data-close-quantity-modal></div>
+    <section class="quantity-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="quantity-modal-title">
+      <button class="quantity-modal__close" type="button" aria-label="Cerrar" data-close-quantity-modal>&times;</button>
+      <p class="eyebrow">Agregar al carrito</p>
+      <h2 id="quantity-modal-title">¿Cuántos equipos deseas?</h2>
+      <p class="quantity-modal__product" id="quantity-modal-product"></p>
+      <label class="quantity-modal__label" for="quantity-input">Cantidad</label>
+      <input id="quantity-input" type="number" min="1" value="1">
+      <p class="quantity-modal__stock" id="quantity-modal-stock"></p>
+      <div class="quantity-modal__actions">
+        <button class="btn btn-secondary" type="button" data-close-quantity-modal>Cancelar</button>
+        <button class="btn btn-primary" type="button" id="confirm-quantity">Agregar al carrito</button>
+      </div>
+    </section>
+  </div>
+  <script src="scripts/product-images.js"></script>
+  <script src="scripts/producto.js?v=2"></script>
+  <script src="scripts/header-search.js"></script>
   <script src="scripts/whatsapp.js"></script>
 </body>
 </html>

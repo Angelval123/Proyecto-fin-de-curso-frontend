@@ -22,7 +22,7 @@
       </nav>
 
       <div class="nav-actions">
-        <a class="icon-button" href="productos.html#buscador" aria-label="Buscar productos">⌕</a>
+        <button class="icon-button" type="button" data-header-search-toggle aria-label="Buscar productos" aria-expanded="false">⌕</button>
         <a class="btn btn-primary cart-button" href="carrito.html">Carrito <span>0</span></a>
       </div>
     </div>
@@ -41,46 +41,23 @@
         </div>
       </section>
 
-      <div class="product-grid">
-        <article class="product-card">
-          <span class="badge badge-sale">-20%</span>
-          <img src="assets/product-2.svg" alt="Laptop en oferta">
-          <div class="product-card__content">
-            <h3>Laptop profesional</h3>
-            <p class="old-price">S/ 3,099</p>
-            <div class="product-meta">
-              <strong>S/ 2,499</strong>
-              <button class="btn btn-primary">Comprar</button>
-            </div>
+      <section class="offers-roulette" aria-labelledby="offers-roulette-title">
+        <div class="offers-roulette__heading">
+          <div>
+            <p class="eyebrow">Descuentos por categoría</p>
+            <h2 id="offers-roulette-title">Una oferta de cada tipo</h2>
           </div>
-        </article>
-
-        <article class="product-card">
-          <span class="badge badge-sale">-15%</span>
-          <img src="assets/product-3.svg" alt="Monitor en oferta">
-          <div class="product-card__content">
-            <h3>Monitor LED 24 pulgadas</h3>
-            <p class="old-price">S/ 699</p>
-            <div class="product-meta">
-              <strong>S/ 599</strong>
-              <button class="btn btn-primary">Comprar</button>
-            </div>
+          <button class="btn btn-secondary offers-roulette__toggle" type="button" data-offers-toggle aria-label="Pausar ofertas" aria-pressed="false" title="Pausar movimiento">
+            <span data-toggle-icon aria-hidden="true">Ⅱ</span>
+            <span data-toggle-label>Pausar</span>
+          </button>
+        </div>
+        <div class="offers-roulette__viewport" tabindex="0" aria-label="Productos con descuento, desplazándose de derecha a izquierda">
+          <div class="offers-roulette__track" id="offers-roulette-track" aria-live="off">
+            <p class="catalog-status">Cargando ofertas...</p>
           </div>
-        </article>
-
-        <article class="product-card">
-          <span class="badge badge-sale">-25%</span>
-          <img src="assets/product-1.svg" alt="Cámara web en oferta">
-          <div class="product-card__content">
-            <h3>Cámara web Full HD</h3>
-            <p class="old-price">S/ 199</p>
-            <div class="product-meta">
-              <strong>S/ 149</strong>
-              <button class="btn btn-primary">Comprar</button>
-            </div>
-          </div>
-        </article>
-      </div>
+        </div>
+      </section>
     </section>
   </main>
 
@@ -89,6 +66,9 @@
       <p>© 2026 E-Store. Todos los derechos reservados.</p>
     </div>
   </footer>
+  <script src="scripts/product-images.js"></script>
+  <script src="scripts/offers-carousel.js"></script>
+  <script src="scripts/header-search.js"></script>
   <script src="scripts/whatsapp.js"></script>
 </body>
 </html>
