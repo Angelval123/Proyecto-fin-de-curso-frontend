@@ -139,13 +139,13 @@ const createRelatedCard = (card, imageIndex) => {
     name: relatedName,
     category: card.dataset.category,
     price: card.dataset.price,
-    image: relatedImage,
+    image: relatedImage.startsWith('data:') ? '' : relatedImage,
     description: card.querySelector('p')?.textContent.trim() || ''
   });
   const article = document.createElement('article');
   article.className = 'product-card';
   article.innerHTML = `
-    <img src="${relatedImage}" alt="${relatedName}">
+    <img src="${relatedImage}" alt="${relatedName}" loading="lazy" decoding="async">
     <div class="product-card__content">
       <h3></h3>
       <p></p>
@@ -162,6 +162,7 @@ fetch('productos.html')
   .then((response) => response.text())
   .then((html) => {
     const documentParser = new DOMParser().parseFromString(html, 'text/html');
+    window.EStoreCatalog?.apply(documentParser);
     const relatedCards = [...documentParser.querySelectorAll('.product-card')]
       .filter((card) => card.dataset.category === productCategory && card.dataset.name !== productName)
       .slice(0, 4);

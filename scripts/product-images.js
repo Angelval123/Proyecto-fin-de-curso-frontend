@@ -12,7 +12,7 @@ const productImagesByCategory = {
     'gigabyte-aorus-rx-9070-xt-elite-16gb.jpg',
     'asus-prime-rx-9070-xt-16gb.jpg',
     'gigabyte-rx-9070-gaming-oc-16gb.webp',
-    'gigabyte-rtx-5070-gaming-oc-12gb.png'
+    'gigabyte-rtx-5070-gaming-oc-12gb.jpg'
   ],
   movilidad: ['scooter-1.jpg', 'scooter-2.jpg']
 };
@@ -32,7 +32,7 @@ const productImageRules = [
   { category: 'tarjetas-video', match: /proart/i, image: 'asus-proart-rtx-5080-16gb.jpg' },
   { category: 'tarjetas-video', match: /aorus/i, image: 'gigabyte-aorus-rx-9070-xt-elite-16gb.jpg' },
   { category: 'tarjetas-video', match: /prime/i, image: 'asus-prime-rx-9070-xt-16gb.jpg' },
-  { category: 'tarjetas-video', match: /rtx 5070/i, image: 'gigabyte-rtx-5070-gaming-oc-12gb.png' },
+  { category: 'tarjetas-video', match: /rtx 5070/i, image: 'gigabyte-rtx-5070-gaming-oc-12gb.jpg' },
   { category: 'tarjetas-video', match: /rx 9070 gaming/i, image: 'gigabyte-rx-9070-gaming-oc-16gb.webp' },
   { category: 'movilidad', match: /c2 lite/i, image: 'scooter-1.jpg' },
   { category: 'movilidad', match: /c2$/i, image: 'scooter-2.jpg' }

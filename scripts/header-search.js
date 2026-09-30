@@ -78,7 +78,7 @@ if (searchButton && searchActions) {
         name: product.name,
         category: product.category,
         price: product.price,
-        image: product.image,
+        image: product.image.startsWith('data:') ? '' : product.image,
         description: product.description
       }).toString()}`;
 
@@ -108,6 +108,7 @@ if (searchButton && searchActions) {
     })
     .then((html) => {
       const parsed = new DOMParser().parseFromString(html, 'text/html');
+      window.EStoreCatalog?.apply(parsed);
       const categoryImageIndexes = new Map();
       return [...parsed.querySelectorAll('.product-card[data-name]')].map((card) => {
         const { name, category, price } = card.dataset;

@@ -22,22 +22,12 @@ const updateCartCount = () => {
   });
 };
 
-const getStockByPrice = (price) => {
-  if (price <= 250) return 300;
-  if (price <= 700) return 150;
-  if (price <= 1500) return 100;
-  if (price <= 3000) return 60;
-  if (price <= 5000) return 40;
-  return 30;
-};
-
 const categoryImageIndexes = new Map();
 
 document.querySelectorAll('.product-card').forEach((productCard) => {
-  const limitedStockCategories = ['movilidad', 'procesadores'];
-  const stock = limitedStockCategories.includes(productCard.dataset.category)
-    ? 50
-    : getStockByPrice(Number(productCard.dataset.price));
+  const stock = productCard.dataset.adminStock
+    ? Number(productCard.dataset.adminStock)
+    : window.EStoreCatalog.defaultStock(productCard.dataset.category, Number(productCard.dataset.price));
   productCard.dataset.stock = stock;
   const stockLabel = productCard.querySelector('.stock');
   if (stockLabel) stockLabel.textContent = `${stock} disponibles`;
@@ -53,11 +43,13 @@ document.querySelectorAll('.product-card').forEach((productCard) => {
   }
 
   const detailLink = document.createElement('a');
+  const imageSource = productImage?.getAttribute('src') || '';
   const detailParams = new URLSearchParams({
     name: productCard.dataset.name,
     category: productCard.dataset.category,
     price: productCard.dataset.price,
-    image: productImage?.getAttribute('src') || '',
+    // Las imágenes subidas desde el panel son data URLs muy largas: producto.js las recupera por nombre.
+    image: imageSource.startsWith('data:') ? '' : imageSource,
     description: productCard.querySelector('p')?.textContent.trim() || ''
   });
   detailLink.className = 'product-detail-link';

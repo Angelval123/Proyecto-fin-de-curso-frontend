@@ -19,7 +19,9 @@ const createOfferCard = (productCard, category) => {
   const { name, category: productCategory, price } = productCard.dataset;
   const image = window.getEStoreProductImage(productCategory, name);
   const description = productCard.querySelector('p')?.textContent.trim() || '';
-  const detailParams = new URLSearchParams({ name, category: productCategory, price, image, description });
+  const detailParams = new URLSearchParams({
+    name, category: productCategory, price, image: image.startsWith('data:') ? '' : image, description
+  });
   const article = document.createElement('article');
   article.className = 'product-card offers-roulette__card';
 
@@ -64,6 +66,7 @@ if (offersTrack && offersViewport && offersToggle) {
     })
     .then((html) => {
       const catalog = new DOMParser().parseFromString(html, 'text/html');
+      window.EStoreCatalog?.apply(catalog);
       const catalogProducts = [...catalog.querySelectorAll('.product-card[data-category]')];
       const group = document.createElement('div');
       group.className = 'offers-roulette__group';
