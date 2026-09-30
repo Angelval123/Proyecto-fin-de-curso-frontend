@@ -22,7 +22,7 @@ button { font: inherit; }
 .menu a { color: var(--muted); font-weight: 600; transition: color .2s ease; }
 .menu a:hover, .menu a.is-active { color: var(--text); }
 .nav-actions { position: relative; display: flex; align-items: center; gap: .6rem; }
-.icon-button { display: grid; width: 42px; height: 42px; place-items: center; border: 1px solid var(--line); border-radius: 10px; background: var(--white); color: var(--ink); font-size: 1.5rem; cursor: pointer; }
+.icon-button { display: grid; width: 42px; height: 42px; place-items: center; border: 1px solid var(--line); border-radius: 50%; background: var(--white); color: var(--ink); font-size: 1.5rem; cursor: pointer; }
 .icon-button img { width: 28px; height: 28px; border-radius: 50%; object-fit: cover; }
 .icon-button:hover { border-color: var(--yellow); background: var(--yellow); }
 .header-search { position: absolute; top: calc(100% + .7rem); right: 0; z-index: 40; display: grid; gap: .65rem; width: min(420px, calc(100vw - 2rem)); padding: .8rem; border: 1px solid var(--line); border-radius: 12px; background: var(--surface); color: var(--text); box-shadow: 0 18px 44px rgba(0,0,0,.45); }
@@ -236,3 +236,26 @@ button { font: inherit; }
 @media (max-width: 680px) { .product-card:hover, .product-detail__visual:hover { overflow: hidden; } .product-card img:hover, .product-detail__visual img:hover { transform: none; } }
 @media (max-width: 680px) { .offers-roulette__heading { align-items: flex-start; flex-direction: column; } .offers-roulette__card { flex-basis: min(268px, 78vw); } }
 @media (prefers-reduced-motion: reduce) { .offers-roulette__track { animation: none; } .offers-roulette__viewport { overflow-x: auto; } .offers-roulette__group[aria-hidden="true"] { display: none; } }
+
+/* Acceso de trabajadores */
+.visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.btn-danger { background: #c9362c; color: #fff; }
+.btn-danger:hover { background: #e0463b; }
+.worker-button { display: inline-flex; align-items: center; gap: .45rem; min-height: 42px; padding: 0 .95rem 0 .75rem; border: 1px solid var(--line); border-radius: 999px; background: transparent; color: var(--text); font-size: .9rem; font-weight: 700; cursor: pointer; transition: border-color .2s ease, color .2s ease; }
+.worker-button svg { width: 20px; height: 20px; fill: currentColor; }
+.worker-button:hover { border-color: var(--yellow); color: var(--yellow-dark); }
+.worker-button:focus-visible, .worker-login__toggle:focus-visible { outline: 2px solid var(--yellow); outline-offset: 2px; }
+.worker-modal__dialog { width: min(440px, 100%); }
+.worker-modal__dialog .eyebrow.worker-modal__eyebrow { color: var(--yellow-contrast); }
+.worker-modal__intro { margin: .5rem 0 1.25rem; color: #59616a; line-height: 1.5; font-size: .92rem; }
+.worker-login { display: grid; gap: .4rem; }
+.worker-login__label { margin-top: .45rem; color: #59616a; font-size: .85rem; font-weight: 700; }
+.worker-login__input { width: 100%; padding: .85rem; border: 1px solid #c9ccd1; border-radius: 8px; outline-color: var(--yellow); background: #fff; color: var(--ink); font: inherit; }
+.worker-login__input[aria-invalid="true"] { border-color: #c9362c; }
+.worker-login__password { position: relative; }
+.worker-login__password .worker-login__input { padding-right: 5.5rem; }
+.worker-login__toggle { position: absolute; top: 50%; right: .4rem; padding: .45rem .7rem; border: 0; border-radius: 6px; background: #eceee9; color: var(--ink); font-size: .8rem; font-weight: 700; cursor: pointer; transform: translateY(-50%); }
+.worker-login__error { min-height: 1.2rem; margin: .35rem 0 0; color: #b3261e; font-size: .85rem; font-weight: 600; }
+.worker-login__submit { width: 100%; margin-top: .4rem; }
+.worker-login__submit:disabled { opacity: .6; cursor: not-allowed; transform: none; }
+@media (max-width: 680px) { .worker-button { min-height: 38px; padding: 0 .6rem; } .worker-button__label { display: none; } }

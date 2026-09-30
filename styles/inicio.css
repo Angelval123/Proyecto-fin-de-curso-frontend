@@ -276,3 +276,6 @@
   .finder__track { transition: none; }
   .finder__slide img, .finder__summary.is-changing > * { animation: none; }
 }
+
+/* Botón de acceso de trabajadores en la cabecera de inicio */
+.home .worker-button { border: 2px solid var(--line-strong); font-family: 'Space Grotesk', sans-serif; }
