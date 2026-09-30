@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /admin.html
+Disallow: /carrito.html
+Disallow: /entrega.html
+
+Sitemap: https://angelval123.github.io/Proyecto-fin-de-curso-frontend/sitemap.xml

@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Panel de trabajador | E-Store</title>
+  <meta name="theme-color" content="#101214">
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/logo.jpg">
+  <link rel="stylesheet" href="styles/styles.css">
+  <link rel="stylesheet" href="styles/admin.css">
+</head>
+<body class="admin-page" data-page="admin">
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="index.html">
+        <img src="assets/logo.jpg" alt="Logo de E-Store">
+        <span>E-Store</span>
+      </a>
+      <span class="admin-badge">Panel de trabajador</span>
+
+      <div class="nav-actions admin-nav" id="admin-session-actions" hidden>
+        <span class="admin-user" id="admin-user"></span>
+        <a class="btn btn-secondary" href="productos.html">Ver tienda</a>
+        <button class="btn btn-primary" type="button" id="admin-logout">Cerrar sesión</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="page-content">
+    <section class="container admin-login" id="admin-login" hidden>
+      <div class="admin-login__card" id="admin-login-card">
+        <p class="eyebrow">Acceso de trabajadores</p>
+        <h1>Inicia sesión</h1>
+        <p class="admin-login__intro">Ingresa con tu usuario y contraseña de trabajador para gestionar los productos publicados.</p>
+      </div>
+      <a class="admin-login__back" href="index.html">← Volver a la tienda</a>
+    </section>
+
+    <section class="container admin-dashboard" id="admin-dashboard" hidden>
+      <div class="admin-heading">
+        <div>
+          <p class="eyebrow">Gestión de productos</p>
+          <h1>Dashboard de productos</h1>
+          <p class="admin-heading__text">Añade, edita o retira productos del catálogo. Los cambios se reflejan al instante en la tienda.</p>
+        </div>
+        <button class="btn btn-primary" type="button" id="admin-new-product">+ Nuevo producto</button>
+      </div>
+
+      <div class="admin-stats" id="admin-stats" aria-live="polite">
+        <article class="admin-stat">
+          <span class="admin-stat__label">Productos publicados</span>
+          <strong class="admin-stat__value" data-stat="total">0</strong>
+          <span class="admin-stat__hint" data-stat="changes"></span>
+        </article>
+        <article class="admin-stat">
+          <span class="admin-stat__label">Unidades en stock</span>
+          <strong class="admin-stat__value" data-stat="stock">0</strong>
+          <span class="admin-stat__hint" data-stat="categories"></span>
+        </article>
+        <article class="admin-stat">
+          <span class="admin-stat__label">Valor del inventario</span>
+          <strong class="admin-stat__value" data-stat="value">S/ 0</strong>
+          <span class="admin-stat__hint" data-stat="average"></span>
+        </article>
+        <article class="admin-stat admin-stat--alert">
+          <span class="admin-stat__label">Stock bajo (≤ 50)</span>
+          <strong class="admin-stat__value" data-stat="low">0</strong>
+          <span class="admin-stat__hint">Productos por reponer</span>
+        </article>
+      </div>
+
+      <section class="admin-panel" aria-labelledby="admin-categories-title">
+        <h2 id="admin-categories-title">Productos por categoría</h2>
+        <ul class="admin-categories" id="admin-categories"></ul>
+      </section>
+
+      <section class="admin-panel" aria-labelledby="admin-table-title">
+        <div class="admin-panel__head">
+          <h2 id="admin-table-title">Catálogo publicado</h2>
+          <button class="admin-link-button" type="button" id="admin-reset">Restaurar catálogo original</button>
+        </div>
+
+        <div class="catalog-toolbar admin-toolbar">
+          <label class="search-box">
+            <span class="visually-hidden">Buscar producto</span>
+            <input id="admin-search" type="search" placeholder="Buscar por nombre, marca o descripción" autocomplete="off">
+          </label>
+          <label class="select-box">
+            <span>Categoría</span>
+            <select id="admin-category-filter">
+              <option value="all">Todas</option>
+            </select>
+          </label>
+          <label class="select-box">
+            <span>Estado</span>
+            <select id="admin-status-filter">
+              <option value="all">Todos</option>
+              <option value="original">Original</option>
+              <option value="editado">Editado</option>
+              <option value="nuevo">Nuevo</option>
+            </select>
+          </label>
+          <label class="select-box">
+            <span>Ordenar</span>
+            <select id="admin-sort">
+              <option value="catalog">Catálogo</option>
+              <option value="name">Nombre (A-Z)</option>
+              <option value="price-high">Precio: mayor a menor</option>
+              <option value="price-low">Precio: menor a mayor</option>
+              <option value="stock-low">Menor stock</option>
+            </select>
+          </label>
+        </div>
+
+        <p class="catalog-status" id="admin-table-status" aria-live="polite">Cargando catálogo...</p>
+
+        <div class="admin-table-wrap">
+          <table class="admin-table">
+            <thead>
+              <tr>
+                <th scope="col">Producto</th>
+                <th scope="col">Categoría</th>
+                <th scope="col" class="is-numeric">Precio</th>
+                <th scope="col" class="is-numeric">Stock</th>
+                <th scope="col">Estado</th>
+                <th scope="col"><span class="visually-hidden">Acciones</span></th>
+              </tr>
+            </thead>
+            <tbody id="admin-table-body"></tbody>
+          </table>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <div class="quantity-modal admin-modal" id="product-modal" hidden>
+    <div class="quantity-modal__backdrop" data-close-product-modal></div>
+    <section class="quantity-modal__dialog admin-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="product-modal-title">
+      <button class="quantity-modal__close" type="button" aria-label="Cerrar" data-close-product-modal>&times;</button>
+      <p class="eyebrow" id="product-modal-eyebrow">Nuevo producto</p>
+      <h2 id="product-modal-title">Añadir producto</h2>
+
+      <form class="admin-form" id="product-form" novalidate>
+        <div class="admin-form__field admin-form__field--full">
+          <label for="product-name">Nombre del producto</label>
+          <input id="product-name" name="name" type="text" maxlength="80" placeholder="Ej. Logitech G502 Hero" required>
+          <p class="admin-form__error" data-error-for="name"></p>
+        </div>
+
+        <div class="admin-form__field">
+          <label for="product-category">Categoría</label>
+          <select id="product-category" name="category" required>
+            <option value="">Selecciona una categoría</option>
+          </select>
+          <p class="admin-form__error" data-error-for="category"></p>
+        </div>
+
+        <div class="admin-form__field">
+          <label for="product-price">Precio (S/)</label>
+          <input id="product-price" name="price" type="number" min="0.01" step="0.01" inputmode="decimal" placeholder="0.00" required>
+          <p class="admin-form__error" data-error-for="price"></p>
+        </div>
+
+        <div class="admin-form__field">
+          <label for="product-stock">Stock disponible</label>
+          <input id="product-stock" name="stock" type="number" min="0" step="1" inputmode="numeric" placeholder="0" required>
+          <p class="admin-form__error" data-error-for="stock"></p>
+        </div>
+
+        <div class="admin-form__field">
+          <label for="product-image-url">Imagen (URL, opcional)</label>
+          <input id="product-image-url" name="image" type="text" placeholder="https://... o assets/archivo.jpg">
+          <p class="admin-form__error" data-error-for="image"></p>
+        </div>
+
+        <div class="admin-form__field admin-form__field--full">
+          <label for="product-description">Descripción</label>
+          <textarea id="product-description" name="description" rows="3" maxlength="200" placeholder="Describe brevemente el producto" required></textarea>
+          <p class="admin-form__hint"><span id="product-description-count">0</span>/200 caracteres</p>
+          <p class="admin-form__error" data-error-for="description"></p>
+        </div>
+
+        <div class="admin-form__field admin-form__field--full admin-form__image">
+          <img id="product-image-preview" src="assets/principal.jpg" alt="Vista previa de la imagen del producto">
+          <div>
+            <label class="btn btn-secondary admin-form__upload" for="product-image-file">Subir imagen</label>
+            <input class="visually-hidden" id="product-image-file" type="file" accept="image/*">
+            <button class="admin-link-button" type="button" id="product-image-clear">Usar imagen por defecto</button>
+            <p class="admin-form__hint">Si no eliges una imagen se usa la de la categoría.</p>
+          </div>
+        </div>
+
+        <div class="quantity-modal__actions admin-form__actions">
+          <button class="btn btn-secondary" type="button" data-close-product-modal>Cancelar</button>
+          <button class="btn btn-primary" type="submit" id="product-submit">Publicar producto</button>
+        </div>
+      </form>
+    </section>
+  </div>
+
+  <div class="quantity-modal admin-modal" id="confirm-modal" hidden>
+    <div class="quantity-modal__backdrop" data-close-confirm-modal></div>
+    <section class="quantity-modal__dialog" role="alertdialog" aria-modal="true" aria-labelledby="confirm-modal-title" aria-describedby="confirm-modal-text">
+      <p class="eyebrow">Confirmar acción</p>
+      <h2 id="confirm-modal-title"></h2>
+      <p class="quantity-modal__product" id="confirm-modal-text"></p>
+      <div class="quantity-modal__actions">
+        <button class="btn btn-secondary" type="button" data-close-confirm-modal>Cancelar</button>
+        <button class="btn btn-danger" type="button" id="confirm-modal-accept">Confirmar</button>
+      </div>
+    </section>
+  </div>
+
+  <div class="admin-toast" id="admin-toast" role="status" aria-live="polite" hidden></div>
+
+  <script src="scripts/product-images.js"></script>
+  <script src="scripts/catalog-store.js"></script>
+  <script src="scripts/admin-auth.js"></script>
+  <script src="scripts/admin.js"></script>
+</body>
+</html>
